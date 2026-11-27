@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-label="Animated comparison: a half-loaded v3rmillion.net page without the extension, and the same page being repaired with it">
+  <defs>
+    <linearGradient id="hdr" x1="0" x2="1"><stop offset="0" stop-color="#8f1010"/><stop offset="1" stop-color="#c21b1b"/></linearGradient>
+    <clipPath id="win"><rect width="560" height="380" rx="14"/></clipPath>
+  </defs>
+  <style>
+    .pop{transform-box:fill-box;transform-origin:center}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .spin{transform-box:fill-box;transform-origin:center;animation:spin .8s linear infinite}
+    @keyframes raw{0%,18%{opacity:1}24%,92%{opacity:0}98%,100%{opacity:1}}
+    .raw{animation:raw 9s ease-in-out infinite}
+    @keyframes toast{0%,68%{opacity:0;transform:translateY(16px)}72%,90%{opacity:1;transform:translateY(0)}95%,100%{opacity:0}}
+    .toast{animation:toast 9s ease-out infinite}
+    @keyframes blink{0%,100%{opacity:.35}50%{opacity:1}}
+    .blink{animation:blink 2.4s ease-in-out infinite}
+    @keyframes av0{0%,30%{opacity:0;transform:scale(.4)}33%{opacity:1;transform:scale(1.15)}35%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0}}
+.av0{animation:av0 9s ease-out infinite}
+@keyframes sp0{0%,22%{opacity:0}24%,30%{opacity:1}31%,100%{opacity:0}}
+.sp0{animation:sp0 9s linear infinite}
+@keyframes av1{0%,37%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1.15)}42%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0}}
+.av1{animation:av1 9s ease-out infinite}
+@keyframes sp1{0%,22%{opacity:0}24%,37%{opacity:1}38%,100%{opacity:0}}
+.sp1{animation:sp1 9s linear infinite}
+@keyframes av2{0%,44%{opacity:0;transform:scale(.4)}47%{opacity:1;transform:scale(1.15)}49%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0}}
+.av2{animation:av2 9s ease-out infinite}
+@keyframes sp2{0%,22%{opacity:0}24%,44%{opacity:1}45%,100%{opacity:0}}
+.sp2{animation:sp2 9s linear infinite}
+@keyframes av3{0%,51%{opacity:0;transform:scale(.4)}54%{opacity:1;transform:scale(1.15)}56%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0}}
+.av3{animation:av3 9s ease-out infinite}
+@keyframes sp3{0%,22%{opacity:0}24%,51%{opacity:1}52%,100%{opacity:0}}
+.sp3{animation:sp3 9s linear infinite}
+@keyframes av4{0%,58%{opacity:0;transform:scale(.4)}61%{opacity:1;transform:scale(1.15)}63%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0}}
+.av4{animation:av4 9s ease-out infinite}
+@keyframes sp4{0%,22%{opacity:0}24%,58%{opacity:1}59%,100%{opacity:0}}
+.sp4{animation:sp4 9s linear infinite}
+
+  </style>
+  <rect width="1200" height="460" rx="24" fill="#0f0f11"/>
+
+  <text x="40" y="44" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#a1a1aa">Without</text>
+  <text x="620" y="44" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#f2f2f3">With V3rmillion Loader</text>
+
+  <g transform="translate(30 62)">
+    <g clip-path="url(#win)">
+    <rect width="560" height="380" rx="14" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".1"/>
+    <circle cx="22" cy="20" r="5.5" fill="#ff5f57"/><circle cx="40" cy="20" r="5.5" fill="#febc2e"/><circle cx="58" cy="20" r="5.5" fill="#28c840"/>
+    <rect x="84" y="9" width="460" height="22" rx="11" fill="#0f0f11"/>
+    <text x="100" y="25" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">v3rmillion.net/forums/scripts</text>
+    <text x="534" y="25" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6b74">css.php failed</text><rect x="1" y="40" width="558" height="339" fill="#ffffff"/>
+      <text x="20" y="70" font-family="'Times New Roman', Times, serif" font-size="20" fill="#000">V3rmillion</text>
+      <text x="20" y="92" font-family="'Times New Roman', Times, serif" font-size="13" fill="#0000ee" text-decoration="underline">Forums  What's new  Members  Log in  Register</text><g transform="translate(20 118)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="220" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="140" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 168)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="202" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="170" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 218)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="184" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="200" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 268)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="166" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="140" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 318)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="148" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="170" height="7" fill="#555" fill-opacity=".45"/>
+      </g></g>
+    <g class="blink" transform="translate(370 332)">
+      <rect width="170" height="32" rx="16" fill="#c21b1b"/>
+      <text x="85" y="21" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Stuck half-loaded</text>
+    </g>
+  </g>
+
+  <g transform="translate(610 62)">
+    <g clip-path="url(#win)">
+      
+    <rect width="560" height="380" rx="14" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".1"/>
+    <circle cx="22" cy="20" r="5.5" fill="#ff5f57"/><circle cx="40" cy="20" r="5.5" fill="#febc2e"/><circle cx="58" cy="20" r="5.5" fill="#28c840"/>
+    <rect x="84" y="9" width="460" height="22" rx="11" fill="#0f0f11"/>
+    <text x="100" y="25" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">v3rmillion.net/forums/scripts</text>
+    <text x="534" y="25" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" fill="#6b6b74">repairing</text>
+      <rect x="1" y="40" width="558" height="339" fill="#0f0f11"/>
+      <rect x="1" y="40" width="558" height="48" fill="url(#hdr)"/>
+      <text x="20" y="71" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#ffffff">V3rmillion</text>
+      <text x="130" y="70" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" fill="#ffffff" fill-opacity=".8">Forums    What's new    Members</text>
+      <g transform="translate(20 120)">
+        <rect width="518" height="42" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".06"/>
+        <circle cx="25" cy="21" r="14" fill="#2a2a30"/>
+        <g class="sp0"><circle class="spin" cx="25" cy="21" r="8" fill="none" stroke="#c21b1b" stroke-width="2.5" stroke-dasharray="30 60" stroke-linecap="round"/></g>
+        <g class="av0 pop"><circle cx="25" cy="21" r="14" fill="#e0573a"/><circle cx="25" cy="17" r="5" fill="#ffffff" fill-opacity=".85"/><path d="M15 30c2-5 6-7 10-7s8 2 10 7" fill="#ffffff" fill-opacity=".85"/></g>
+        <rect x="50" y="11" width="230" height="8" rx="4" fill="#f2f2f3" fill-opacity=".85"/>
+        <rect x="50" y="25" width="120" height="6" rx="3" fill="#a1a1aa" fill-opacity=".5"/>
+        <rect x="450" y="15" width="56" height="12" rx="6" fill="#c21b1b" fill-opacity=".2"/>
+      </g><g transform="translate(20 170)">
+        <rect width="518" height="42" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".06"/>
+        <circle cx="25" cy="21" r="14" fill="#2a2a30"/>
+        <g class="sp1"><circle class="spin" cx="25" cy="21" r="8" fill="none" stroke="#c21b1b" stroke-width="2.5" stroke-dasharray="30 60" stroke-linecap="round"/></g>
+        <g class="av1 pop"><circle cx="25" cy="21" r="14" fill="#3a8fe0"/><circle cx="25" cy="17" r="5" fill="#ffffff" fill-opacity=".85"/><path d="M15 30c2-5 6-7 10-7s8 2 10 7" fill="#ffffff" fill-opacity=".85"/></g>
+        <rect x="50" y="11" width="210" height="8" rx="4" fill="#f2f2f3" fill-opacity=".85"/>
+        <rect x="50" y="25" width="150" height="6" rx="3" fill="#a1a1aa" fill-opacity=".5"/>
+        <rect x="450" y="15" width="56" height="12" rx="6" fill="#c21b1b" fill-opacity=".2"/>
+      </g><g transform="translate(20 220)">
+        <rect width="518" height="42" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".06"/>
+        <circle cx="25" cy="21" r="14" fill="#2a2a30"/>
+        <g class="sp2"><circle class="spin" cx="25" cy="21" r="8" fill="none" stroke="#c21b1b" stroke-width="2.5" stroke-dasharray="30 60" stroke-linecap="round"/></g>
+        <g class="av2 pop"><circle cx="25" cy="21" r="14" fill="#9b5de5"/><circle cx="25" cy="17" r="5" fill="#ffffff" fill-opacity=".85"/><path d="M15 30c2-5 6-7 10-7s8 2 10 7" fill="#ffffff" fill-opacity=".85"/></g>
+        <rect x="50" y="11" width="190" height="8" rx="4" fill="#f2f2f3" fill-opacity=".85"/>
+        <rect x="50" y="25" width="180" height="6" rx="3" fill="#a1a1aa" fill-opacity=".5"/>
+        <rect x="450" y="15" width="56" height="12" rx="6" fill="#c21b1b" fill-opacity=".2"/>
+      </g><g transform="translate(20 270)">
+        <rect width="518" height="42" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".06"/>
+        <circle cx="25" cy="21" r="14" fill="#2a2a30"/>
+        <g class="sp3"><circle class="spin" cx="25" cy="21" r="8" fill="none" stroke="#c21b1b" stroke-width="2.5" stroke-dasharray="30 60" stroke-linecap="round"/></g>
+        <g class="av3 pop"><circle cx="25" cy="21" r="14" fill="#2fbf71"/><circle cx="25" cy="17" r="5" fill="#ffffff" fill-opacity=".85"/><path d="M15 30c2-5 6-7 10-7s8 2 10 7" fill="#ffffff" fill-opacity=".85"/></g>
+        <rect x="50" y="11" width="170" height="8" rx="4" fill="#f2f2f3" fill-opacity=".85"/>
+        <rect x="50" y="25" width="120" height="6" rx="3" fill="#a1a1aa" fill-opacity=".5"/>
+        <rect x="450" y="15" width="56" height="12" rx="6" fill="#c21b1b" fill-opacity=".2"/>
+      </g><g transform="translate(20 320)">
+        <rect width="518" height="42" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".06"/>
+        <circle cx="25" cy="21" r="14" fill="#2a2a30"/>
+        <g class="sp4"><circle class="spin" cx="25" cy="21" r="8" fill="none" stroke="#c21b1b" stroke-width="2.5" stroke-dasharray="30 60" stroke-linecap="round"/></g>
+        <g class="av4 pop"><circle cx="25" cy="21" r="14" fill="#e0a63a"/><circle cx="25" cy="17" r="5" fill="#ffffff" fill-opacity=".85"/><path d="M15 30c2-5 6-7 10-7s8 2 10 7" fill="#ffffff" fill-opacity=".85"/></g>
+        <rect x="50" y="11" width="150" height="8" rx="4" fill="#f2f2f3" fill-opacity=".85"/>
+        <rect x="50" y="25" width="150" height="6" rx="3" fill="#a1a1aa" fill-opacity=".5"/>
+        <rect x="450" y="15" width="56" height="12" rx="6" fill="#c21b1b" fill-opacity=".2"/>
+      </g>
+      <g class="raw"><rect x="1" y="40" width="558" height="339" fill="#ffffff"/>
+      <text x="20" y="70" font-family="'Times New Roman', Times, serif" font-size="20" fill="#000">V3rmillion</text>
+      <text x="20" y="92" font-family="'Times New Roman', Times, serif" font-size="13" fill="#0000ee" text-decoration="underline">Forums  What's new  Members  Log in  Register</text><g transform="translate(20 118)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="220" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="140" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 168)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="202" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="170" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 218)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="184" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="200" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 268)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="166" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="140" height="7" fill="#555" fill-opacity=".45"/>
+      </g><g transform="translate(20 318)">
+        <rect width="30" height="30" fill="#f2f2f2" stroke="#9a9a9a"/>
+        <path d="M8 22l6-7 4 4 3-3 4 6" fill="none" stroke="#9a9a9a" stroke-width="1.5"/>
+        <path d="M6 6l18 18" stroke="#d33" stroke-width="1.5"/>
+        <rect x="44" y="4" width="148" height="9" fill="#0000ee" fill-opacity=".75"/>
+        <rect x="44" y="19" width="170" height="7" fill="#555" fill-opacity=".45"/>
+      </g></g>
+    </g>
+    <rect x=".5" y=".5" width="559" height="379" rx="14" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+    <g transform="translate(360 332)"><g class="toast">
+      <rect width="180" height="32" rx="16" fill="#22c55e"/>
+      <path d="M18 16l4 4 8-8" fill="none" stroke="#0f0f11" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="100" y="21" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f0f11">6 fixes applied</text>
+    </g></g>
+  </g>
+</svg>

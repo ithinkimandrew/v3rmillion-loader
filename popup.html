@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>V3rmillion Loader</title>
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -12,12 +13,18 @@
     <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="M12 8v4M12 16h.01"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
     <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
     <symbol id="i-brush" viewBox="0 0 24 24"><path d="M9.06 11.9 17 4a2.1 2.1 0 0 1 3 3l-7.94 7.94"/><path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1 2-2 2 1 1.5 3 2 4.5 2a4 4 0 0 0 4-4c0-1.66-1.34-3-3-3z"/></symbol>
     <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></symbol>
+    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 3v6h6"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
     <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
     <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14 16 10"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
   </svg>
 
   <header>
@@ -28,82 +35,148 @@
         <span class="version" id="version"></span>
       </div>
     </div>
-    <button class="icon-btn" id="reload" title="Reload this page" hidden>
-      <svg><use href="#i-refresh"/></svg>
-    </button>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" title="Switch theme">
+        <svg><use id="theme-toggle-icon" href="#i-sun"/></svg>
+      </button>
+      <button class="icon-btn spin" id="reload" type="button" title="Reload this page" hidden>
+        <svg><use href="#i-refresh"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main>
-    <!-- Status hero -->
-    <section class="hero" id="hero" data-state="idle">
-      <div class="hero-icon"><svg id="hero-svg"><use href="#i-moon"/></svg></div>
-      <div class="hero-text">
-        <h2 id="hero-title">Not on V3rmillion</h2>
-        <p id="hero-sub">Open the forum and fixes will show up here.</p>
-      </div>
-      <a class="btn primary" id="open-site" href="https://v3rmillion.net/" target="_blank" hidden>
-        Open <svg><use href="#i-external"/></svg>
-      </a>
-    </section>
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="overview" aria-selected="true" type="button">
+      <svg><use href="#i-gauge"/></svg> Overview
+    </button>
+    <button class="tab" role="tab" data-tab="settings" aria-selected="false" type="button">
+      <svg><use href="#i-gear"/></svg> Settings
+    </button>
+  </nav>
 
-    <!-- This page -->
-    <section id="page" hidden>
-      <div class="tiles">
-        <div class="tile" title="Stylesheets that failed and were fetched again">
-          <svg><use href="#i-brush"/></svg>
-          <b id="p-css">0</b><span>Styles</span>
+  <main id="main">
+    <!-- ================= Overview ================= -->
+    <div class="panel" id="tab-overview" role="tabpanel">
+      <section class="hero" id="hero" data-state="idle">
+        <div class="hero-icon"><svg id="hero-svg"><use href="#i-moon"/></svg></div>
+        <div class="hero-text">
+          <h2 id="hero-title">Not on V3rmillion</h2>
+          <p id="hero-sub">Open the forum and fixes will show up here.</p>
         </div>
-        <div class="tile" title="Images that failed and were recovered">
-          <svg><use href="#i-image"/></svg>
-          <b id="p-img">0</b><span>Images</span>
+        <a class="btn primary" id="open-site" href="https://v3rmillion.net/" target="_blank" hidden>
+          Open <svg><use href="#i-external"/></svg>
+        </a>
+      </section>
+
+      <section id="page" hidden>
+        <div class="tiles">
+          <div class="tile" title="Stylesheets that failed and were fetched again">
+            <svg><use href="#i-brush"/></svg>
+            <b id="p-css">0</b><span>Styles</span>
+          </div>
+          <div class="tile" title="Images that failed and were recovered">
+            <svg><use href="#i-image"/></svg>
+            <b id="p-img">0</b><span>Images</span>
+          </div>
+          <div class="tile" title="Automatic reloads after the site's scripts failed">
+            <svg><use href="#i-refresh"/></svg>
+            <b id="p-reload">0</b><span>Reloads</span>
+          </div>
         </div>
-        <div class="tile" title="Automatic reloads after the site's scripts failed">
-          <svg><use href="#i-refresh"/></svg>
-          <b id="p-reload">0</b><span>Reloads</span>
+        <div class="notice" id="p-failed-wrap" hidden>
+          <svg><use href="#i-x"/></svg>
+          <span id="p-failed-text"></span>
         </div>
-      </div>
-      <div class="notice" id="p-failed-wrap" hidden>
-        <svg><use href="#i-x"/></svg>
-        <span id="p-failed-text"></span>
+
+        <details class="activity" id="activity">
+          <summary>
+            <span>Activity</span>
+            <span class="count" id="ev-count">0</span>
+            <svg class="chev"><use href="#i-chevron"/></svg>
+          </summary>
+          <ul id="events"></ul>
+        </details>
+      </section>
+
+      <section class="card lifetime">
+        <div class="card-head">
+          <h3>Lifetime</h3>
+          <span class="muted" id="since"></span>
+        </div>
+        <div class="lifetime-body">
+          <div class="ring" title="Share of visited pages that needed at least one fix">
+            <svg viewBox="0 0 80 80">
+              <circle class="track" cx="40" cy="40" r="34"/>
+              <circle class="value" id="ring-value" cx="40" cy="40" r="34"/>
+            </svg>
+            <div class="ring-label"><b id="l-rate">0%</b><span>repaired</span></div>
+          </div>
+          <dl class="stats">
+            <div><dt>Pages visited</dt><dd id="l-pages">0</dd></div>
+            <div><dt>Pages repaired</dt><dd id="l-repaired">0</dd></div>
+            <div><dt>Images recovered</dt><dd id="l-img">0</dd></div>
+            <div><dt>Styles fixed</dt><dd id="l-css">0</dd></div>
+            <div><dt>Auto-reloads</dt><dd id="l-reload">0</dd></div>
+            <div><dt>Cloudflare checks</dt><dd id="l-challenge">0</dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= Settings ================= -->
+    <div class="panel" id="tab-settings" role="tabpanel" hidden>
+      <div class="group-title">Appearance</div>
+      <div class="group">
+        <div class="row static">
+          <div class="row-text"><b>Theme</b><span>Match your system or pick one</span></div>
+          <div class="seg" id="theme-seg" role="group" aria-label="Theme">
+            <button type="button" data-theme="system" aria-pressed="false" title="Follow system"><svg><use href="#i-monitor"/></svg>Auto</button>
+            <button type="button" data-theme="dark" aria-pressed="true" title="Dark"><svg><use href="#i-moon"/></svg>Dark</button>
+            <button type="button" data-theme="light" aria-pressed="false" title="Light"><svg><use href="#i-sun"/></svg>Light</button>
+          </div>
+        </div>
       </div>
 
-      <details class="activity" id="activity">
-        <summary>
-          <span>Activity</span>
-          <span class="count" id="ev-count">0</span>
-          <svg class="chev"><use href="#i-chevron"/></svg>
-        </summary>
-        <ul id="events"></ul>
-      </details>
-    </section>
+      <div class="group-title">Repairs</div>
+      <div class="group">
+        <label class="row">
+          <div class="row-text"><b>Image recovery</b><span>Retry broken avatars, icons and attachments</span></div>
+          <span class="switch"><input type="checkbox" data-setting="imageRecovery"><span class="track"></span></span>
+        </label>
+        <label class="row">
+          <div class="row-text"><b>Stylesheet repair</b><span>Fetch page styles again if they fail</span></div>
+          <span class="switch"><input type="checkbox" data-setting="cssRepair"><span class="track"></span></span>
+        </label>
+        <label class="row">
+          <div class="row-text"><b>Auto-reload</b><span>Reload once if the site's scripts don't start</span></div>
+          <span class="switch"><input type="checkbox" data-setting="autoReload"><span class="track"></span></span>
+        </label>
+        <label class="row">
+          <div class="row-text"><b>Preload nearby images</b><span>Load lazy images before you scroll to them</span></div>
+          <span class="switch"><input type="checkbox" data-setting="eagerLazy"><span class="track"></span></span>
+        </label>
+      </div>
 
-    <!-- Lifetime -->
-    <section class="card lifetime">
-      <div class="card-head">
-        <h3>Lifetime</h3>
-        <span class="muted" id="since"></span>
+      <div class="group-title">Interface</div>
+      <div class="group">
+        <label class="row">
+          <div class="row-text"><b>Toolbar badge</b><span>Show the fix count on the extension icon</span></div>
+          <span class="switch"><input type="checkbox" data-setting="showBadge"><span class="track"></span></span>
+        </label>
+        <label class="row">
+          <div class="row-text"><b>In-page alerts</b><span>Show a banner when something can't be fixed</span></div>
+          <span class="switch"><input type="checkbox" data-setting="banner"><span class="track"></span></span>
+        </label>
       </div>
-      <div class="lifetime-body">
-        <div class="ring" title="Share of visited pages that needed at least one fix">
-          <svg viewBox="0 0 80 80">
-            <circle class="track" cx="40" cy="40" r="34"/>
-            <circle class="value" id="ring-value" cx="40" cy="40" r="34"/>
-          </svg>
-          <div class="ring-label"><b id="l-rate">0%</b><span>repaired</span></div>
-        </div>
-        <dl class="stats">
-          <div><dt>Pages visited</dt><dd id="l-pages">0</dd></div>
-          <div><dt>Pages repaired</dt><dd id="l-repaired">0</dd></div>
-          <div><dt>Images recovered</dt><dd id="l-img">0</dd></div>
-          <div><dt>Styles fixed</dt><dd id="l-css">0</dd></div>
-          <div><dt>Auto-reloads</dt><dd id="l-reload">0</dd></div>
-          <div><dt>Cloudflare checks</dt><dd id="l-challenge">0</dd></div>
-        </dl>
-      </div>
-    </section>
+
+      <button class="btn secondary block" id="restore" type="button">
+        <svg><use href="#i-undo"/></svg><span id="restore-label">Restore recommended defaults</span>
+      </button>
+      <p class="hint">Recommended: dark theme with every repair and alert turned on. <span class="saved" id="saved">Saved</span></p>
+    </div>
   </main>
 
-  <footer>
+  <footer id="footer">
     <span class="muted" id="last-fix"></span>
     <button class="link-btn" id="reset" type="button">Reset stats</button>
   </footer>

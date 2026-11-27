@@ -35,7 +35,16 @@ function fixesOf(counts) {
   return FIX_KINDS.reduce((n, k) => n + (counts[k] || 0), 0);
 }
 
+async function badgeEnabled() {
+  const { settings } = await chrome.storage.sync.get('settings');
+  return settings?.showBadge ?? true;
+}
+
 async function updateBadge(tabId, tab) {
+  if (!(await badgeEnabled())) {
+    await chrome.action.setBadgeText({ tabId, text: '' });
+    return;
+  }
   const n = tab ? fixesOf(tab.counts) : 0;
   const challenged = tab && tab.counts.challenge > 0 && n === 0;
   await chrome.action.setBadgeText({ tabId, text: challenged ? '!' : n ? String(n > 999 ? '999+' : n) : '' });
@@ -98,4 +107,21 @@ chrome.tabs.onRemoved.addListener((tabId) => {
 chrome.runtime.onInstalled.addListener(async () => {
   const lifetime = await getLifetime();
   await chrome.storage.local.set({ [LIFETIME_KEY]: lifetime });
+});
+
+// Settings tab: toggling the badge applies to every open tab right away.
+chrome.storage.onChanged.addListener(async (changes, area) => {
+  if (area !== 'sync' || !changes.settings) return;
+  const was = changes.settings.oldValue?.showBadge ?? true;
+  const now = changes.settings.newValue?.showBadge ?? true;
+  if (was === now) return;
+  const tabs = await chrome.tabs.query({});
+  for (const t of tabs) {
+    if (now) {
+      const tab = await getTab(t.id);
+      if (tab) updateBadge(t.id, tab).catch(() => {});
+    } else {
+      chrome.action.setBadgeText({ tabId: t.id, text: '' }).catch(() => {});
+    }
+  }
 });

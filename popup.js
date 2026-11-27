@@ -4,6 +4,18 @@ const $ = (id) => document.getElementById(id);
 const V3RM = /^https:\/\/([a-z0-9-]+\.)?v3rmillion\.net\//i;
 const RING = 2 * Math.PI * 34; // circumference of the lifetime ring
 
+// Recommended defaults. Keep in sync with content.js and background.js.
+const DEFAULTS = Object.freeze({
+  theme: 'dark',
+  imageRecovery: true,
+  cssRepair: true,
+  autoReload: true,
+  eagerLazy: true,
+  showBadge: true,
+  banner: true
+});
+let settings = { ...DEFAULTS };
+
 // kind -> [title, icon, isProblem]
 const EVENTS = {
   css: ['Stylesheet repaired', 'i-brush', false],
@@ -46,6 +58,7 @@ function icon(id) {
   return svg;
 }
 
+// ================= Overview =================
 function setHero(state, iconId, title, sub) {
   $('hero').dataset.state = state;
   $('hero-svg').firstElementChild.setAttribute('href', '#' + iconId);
@@ -66,8 +79,11 @@ function renderTab(tab, isV3rm) {
   const c = tab?.counts || {};
   const fixes = (c.css || 0) + (c.img || 0) + (c.reload || 0);
   const failed = (c.imgFailed || 0) + (c.cssFailed || 0);
+  const paused = !settings.imageRecovery && !settings.cssRepair && !settings.autoReload;
 
-  if (c.challenge && !fixes) {
+  if (paused) {
+    setHero('warn', 'i-pause', 'Repairs paused', 'All repairs are turned off in Settings.');
+  } else if (c.challenge && !fixes) {
     setHero('warn', 'i-shield', 'Cloudflare check', 'Complete the verification on the page to continue.');
   } else if (fixes) {
     setHero('fixed', 'i-wrench', `${plural(fixes, 'fix')} applied`, 'This page had loading problems, and they were repaired.');
@@ -92,33 +108,33 @@ function renderTab(tab, isV3rm) {
     li.className = 'empty';
     li.textContent = 'Nothing has needed fixing yet.';
     list.appendChild(li);
-    return;
-  }
-  for (const e of events) {
-    const [title, iconId, bad] = EVENTS[e.kind] || [e.kind, 'i-wrench', false];
-    const li = document.createElement('li');
-    li.title = e.url;
+  } else {
+    for (const e of events) {
+      const [title, iconId, bad] = EVENTS[e.kind] || [e.kind, 'i-wrench', false];
+      const li = document.createElement('li');
+      li.title = e.url;
 
-    const ic = document.createElement('span');
-    ic.className = 'ev-icon' + (bad ? ' bad' : '');
-    ic.appendChild(icon(iconId));
+      const ic = document.createElement('span');
+      ic.className = 'ev-icon' + (bad ? ' bad' : '');
+      ic.appendChild(icon(iconId));
 
-    const main = document.createElement('div');
-    main.className = 'ev-main';
-    const t = document.createElement('span');
-    t.className = 'ev-title';
-    t.textContent = title;
-    const u = document.createElement('span');
-    u.className = 'ev-url';
-    u.textContent = shortUrl(e.url);
-    main.append(t, u);
+      const main = document.createElement('div');
+      main.className = 'ev-main';
+      const t = document.createElement('span');
+      t.className = 'ev-title';
+      t.textContent = title;
+      const u = document.createElement('span');
+      u.className = 'ev-url';
+      u.textContent = shortUrl(e.url);
+      main.append(t, u);
 
-    const time = document.createElement('span');
-    time.className = 'ev-time';
-    time.textContent = ago(e.t);
+      const time = document.createElement('span');
+      time.className = 'ev-time';
+      time.textContent = ago(e.t);
 
-    li.append(ic, main, time);
-    list.appendChild(li);
+      li.append(ic, main, time);
+      list.appendChild(li);
+    }
   }
   requestAnimationFrame(updateFade);
 }
@@ -151,6 +167,15 @@ function renderLifetime(l) {
   $('last-fix').textContent = l.lastFixAt ? `Last fix ${ago(l.lastFixAt)}` : 'No fixes yet';
 }
 
+// Open the activity list automatically when there's something to see.
+let autoOpened = false;
+function autoOpenActivity(tab) {
+  if (!autoOpened && (tab?.events || []).length) {
+    $('activity').open = true;
+    autoOpened = true;
+  }
+}
+
 async function refresh() {
   [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const isV3rm = !!activeTab?.url && V3RM.test(activeTab.url);
@@ -160,7 +185,81 @@ async function refresh() {
   renderLifetime(stats?.lifetime || {});
 }
 
-// ---------- Actions ----------
+// ================= Tabs =================
+function showTab(name) {
+  for (const t of document.querySelectorAll('.tab')) {
+    t.setAttribute('aria-selected', String(t.dataset.tab === name));
+  }
+  $('tab-overview').hidden = name !== 'overview';
+  $('tab-settings').hidden = name !== 'settings';
+  $('footer').hidden = name !== 'overview';
+  $('main').scrollTop = 0;
+  try { localStorage.setItem('v3l-tab', name); } catch { /* ignore */ }
+  if (name === 'overview') requestAnimationFrame(updateFade);
+}
+for (const t of document.querySelectorAll('.tab')) t.addEventListener('click', () => showTab(t.dataset.tab));
+
+// ================= Settings =================
+const isDefault = () => Object.keys(DEFAULTS).every((k) => settings[k] === DEFAULTS[k]);
+
+function applyTheme() {
+  window.v3lApplyTheme?.(settings.theme);
+  try { localStorage.setItem('v3l-theme', settings.theme); } catch { /* ignore */ }
+  const light = document.documentElement.dataset.theme === 'light';
+  $('theme-toggle').title = light ? 'Switch to dark mode' : 'Switch to light mode';
+  $('theme-toggle-icon').setAttribute('href', light ? '#i-moon' : '#i-sun');
+}
+
+function renderSettings() {
+  for (const b of document.querySelectorAll('#theme-seg button')) {
+    b.setAttribute('aria-pressed', String(b.dataset.theme === settings.theme));
+  }
+  for (const input of document.querySelectorAll('input[data-setting]')) {
+    input.checked = !!settings[input.dataset.setting];
+  }
+  const def = isDefault();
+  $('restore').disabled = def;
+  $('restore-label').textContent = def ? 'Using recommended defaults' : 'Restore recommended defaults';
+  applyTheme();
+}
+
+let savedTimer = 0;
+function flashSaved(message) {
+  const el = $('saved');
+  el.textContent = message;
+  el.classList.add('show');
+  clearTimeout(savedTimer);
+  savedTimer = setTimeout(() => el.classList.remove('show'), 1500);
+}
+
+async function saveSettings(patch, message = 'Saved') {
+  settings = { ...settings, ...patch };
+  renderSettings();
+  await chrome.storage.sync.set({ settings });
+  flashSaved(message);
+}
+
+async function loadSettings() {
+  const { settings: s } = await chrome.storage.sync.get('settings');
+  settings = { ...DEFAULTS, ...(s || {}) };
+  renderSettings();
+}
+
+for (const b of document.querySelectorAll('#theme-seg button')) {
+  b.addEventListener('click', () => saveSettings({ theme: b.dataset.theme }));
+}
+for (const input of document.querySelectorAll('input[data-setting]')) {
+  input.addEventListener('change', () => saveSettings({ [input.dataset.setting]: input.checked }));
+}
+// Header quick toggle: flips between light and dark.
+$('theme-toggle').addEventListener('click', () => {
+  const light = document.documentElement.dataset.theme === 'light';
+  saveSettings({ theme: light ? 'dark' : 'light' });
+});
+$('restore').addEventListener('click', () => saveSettings({ ...DEFAULTS }, 'Defaults restored'));
+matchMedia('(prefers-color-scheme: light)').addEventListener('change', applyTheme);
+
+// ================= Actions =================
 $('version').textContent = 'v' + chrome.runtime.getManifest().version;
 
 $('reload').addEventListener('click', () => {
@@ -191,15 +290,17 @@ $('reset').addEventListener('click', async () => {
   refresh();
 });
 
-// Open the activity list automatically when there's something to see.
-let autoOpened = false;
-function autoOpenActivity(tab) {
-  if (!autoOpened && (tab?.events || []).length) {
-    $('activity').open = true;
-    autoOpened = true;
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && changes.settings) {
+    settings = { ...DEFAULTS, ...(changes.settings.newValue || {}) };
+    renderSettings();
   }
-}
+  refresh();
+});
 
-chrome.storage.onChanged.addListener(() => refresh());
+// ================= Init =================
+let startTab = 'overview';
+try { startTab = localStorage.getItem('v3l-tab') === 'settings' ? 'settings' : 'overview'; } catch { /* ignore */ }
+showTab(startTab);
+loadSettings().then(refresh);
 setInterval(refresh, 5000); // keeps the "x ago" labels fresh
-refresh();

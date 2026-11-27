@@ -18,8 +18,16 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Chrome caps popups at 600px tall. Instead of letting the whole popup grow a page
+   scrollbar, the header and footer stay fixed and only the middle scrolls, with no
+   visible scrollbar. */
+html, body { overflow: hidden; }
+
 body {
   width: 360px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
   background:
     radial-gradient(120% 60% at 100% 0%, rgba(143, 16, 16, 0.22), transparent 60%),
     var(--bg);
@@ -78,7 +86,21 @@ h1 { font-size: 14px; font-weight: 650; letter-spacing: -0.01em; }
 .icon-btn:active svg { transform: rotate(-90deg); }
 .icon-btn svg { transition: transform 0.3s; }
 
-main { display: flex; flex-direction: column; gap: 10px; padding: 0 12px 12px; }
+header, footer { flex: none; }
+main {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+/* Scroll areas without visible scrollbars */
+main, #events { scrollbar-width: none; }
+main::-webkit-scrollbar, #events::-webkit-scrollbar { display: none; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -87,7 +109,7 @@ main { display: flex; flex-direction: column; gap: 10px; padding: 0 12px 12px; }
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px;
+  padding: 12px 14px;
   border-radius: var(--radius);
   background: linear-gradient(180deg, var(--accent-soft), transparent 140%), var(--surface);
   border: 1px solid var(--border);
@@ -139,13 +161,13 @@ main { display: flex; flex-direction: column; gap: 10px; padding: 0 12px 12px; }
 .btn.primary:hover { background: #d62222; }
 
 /* ---------- Tiles ---------- */
-#page { display: flex; flex-direction: column; gap: 10px; }
+#page { display: flex; flex-direction: column; gap: 8px; }
 .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .tile {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  padding: 11px 12px;
+  padding: 9px 12px;
   border-radius: 12px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -200,9 +222,18 @@ main { display: flex; flex-direction: column; gap: 10px; padding: 0 12px 12px; }
 .chev { margin-left: auto; color: var(--text-3); transition: transform 0.2s; }
 .activity[open] .chev { transform: rotate(180deg); }
 
-#events { list-style: none; max-height: 168px; overflow-y: auto; border-top: 1px solid var(--border); }
-#events::-webkit-scrollbar { width: 6px; }
-#events::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 3px; }
+#events {
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+}
+/* Soft fade at the bottom hints there's more to scroll, instead of a scrollbar */
+#events.scrollable {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 20px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 20px), transparent);
+}
+#events.scrollable.at-end { -webkit-mask-image: none; mask-image: none; }
 #events li {
   display: flex;
   align-items: center;
@@ -241,8 +272,8 @@ main { display: flex; flex-direction: column; gap: 10px; padding: 0 12px 12px; }
 .muted { color: var(--text-3); font-size: 11px; }
 
 .lifetime-body { display: flex; align-items: center; gap: 16px; }
-.ring { position: relative; width: 88px; height: 88px; flex: none; }
-.ring svg { width: 88px; height: 88px; transform: rotate(-90deg); stroke-width: 8; }
+.ring { position: relative; width: 80px; height: 80px; flex: none; }
+.ring svg { width: 80px; height: 80px; transform: rotate(-90deg); stroke-width: 8; }
 .ring .track { stroke: var(--surface-2); }
 .ring .value {
   stroke: var(--red);

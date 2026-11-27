@@ -120,7 +120,18 @@ function renderTab(tab, isV3rm) {
     li.append(ic, main, time);
     list.appendChild(li);
   }
+  requestAnimationFrame(updateFade);
 }
+
+// Fade the bottom edge of the activity list only when there's more below.
+function updateFade() {
+  const list = $('events');
+  const scrollable = list.scrollHeight > list.clientHeight + 1;
+  list.classList.toggle('scrollable', scrollable);
+  list.classList.toggle('at-end', scrollable && list.scrollTop + list.clientHeight >= list.scrollHeight - 2);
+}
+$('events').addEventListener('scroll', updateFade, { passive: true });
+$('activity').addEventListener('toggle', () => requestAnimationFrame(updateFade));
 
 function renderLifetime(l) {
   $('l-pages').textContent = fmt(l.pages);

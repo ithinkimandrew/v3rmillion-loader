@@ -5,7 +5,7 @@
 **Make [v3rmillion.net](https://v3rmillion.net) load completely, even on a flaky VPN or proxy.**
 
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-8f1010?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.3.0-8f1010?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.3.1-8f1010?style=flat-square)
 ![Chrome](https://img.shields.io/badge/Chrome-supported-4285F4?style=flat-square&logo=googlechrome&logoColor=white)
 ![Brave](https://img.shields.io/badge/Brave-supported-FB542B?style=flat-square&logo=brave&logoColor=white)
 ![Edge](https://img.shields.io/badge/Edge-supported-0078D7?style=flat-square&logo=microsoftedge&logoColor=white)
@@ -99,6 +99,7 @@ Click the toolbar icon to see:
 - **Status card:** shows at a glance whether the page *loaded cleanly*, had *fixes applied* or is waiting on a *Cloudflare check*.
 - **This page:** tiles for styles, images and reloads, a warning for anything that couldn't be recovered, and an expandable activity timeline.
 - **Lifetime:** a ring chart showing what share of pages needed a repair, plus totals for pages, images, styles, reloads and Cloudflare checks.
+- **Compact layout:** fits Chrome's 600px popup limit. If the activity list grows long, only the list scrolls (no scrollbars, just a soft fade at the bottom).
 - **Quick actions:** a button to reload the current page and a two-step *Reset stats* (click twice).
 - **Badge:** the number of fixes on the current tab. `!` means a Cloudflare check is waiting for you.
 
@@ -161,6 +162,9 @@ To see every repair as it happens, open DevTools on v3rmillion.net and filter th
 | **Claude** (AI pair programmer) | Diagnostics, repair engine, popup UI, docs |
 
 ## Changelog
+
+### 1.3.1
+- Fixed the popup growing a page scrollbar when the activity card is opened. The header and footer stay put, the activity list scrolls on its own with a fade instead of a scrollbar, and the layout is slightly more compact.
 
 ### 1.3.0
 - Redesigned the popup: status card at the top, per-page tiles, an expandable activity timeline with icons, a lifetime ring chart, a reload button and a two-step stats reset.

@@ -26,6 +26,16 @@
   const LAZY_ATTRS = ['data-src', 'data-lazy-src', 'data-original', 'data-url'];
 
   const log = (...a) => console.info(TAG, ...a);
+
+  // ---------- Settings (popup Settings tab; chrome.storage.sync) ----------
+  const DEFAULTS = { imageRecovery: true, cssRepair: true, autoReload: true, eagerLazy: true, banner: true };
+  const settings = { ...DEFAULTS };
+  try {
+    chrome.storage.sync.get('settings').then(({ settings: s }) => Object.assign(settings, s || {})).catch(() => {});
+    chrome.storage.onChanged.addListener((changes, area) => {
+      if (area === 'sync' && changes.settings) Object.assign(settings, DEFAULTS, changes.settings.newValue || {});
+    });
+  } catch { /* extension context invalidated */ }
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const delayFor = (tries) => (tries < FAST_TRIES ? RETRY_DELAYS[tries] : SLOW_DELAY);
   // Bumps when the network reconnects or the tab becomes visible again: everything
@@ -69,7 +79,7 @@
 
   // ---------- Banner ----------
   function banner(text, actionLabel, action) {
-    if (!document.body) return;
+    if (!document.body || !settings.banner) return;
     let el = document.getElementById('v3l-banner');
     if (!el) {
       el = document.createElement('div');
@@ -172,7 +182,7 @@
     const near = isNear(img);
 
     // Lazy-load placeholders (data-src etc.) near the viewport: load them now.
-    if (near && (!src || src.startsWith('data:'))) {
+    if (near && settings.eagerLazy && (!src || src.startsWith('data:'))) {
       for (const a of LAZY_ATTRS) {
         const v = img.getAttribute(a);
         if (v && isOurUrl(v)) { img.src = v; return; }
@@ -182,10 +192,10 @@
     if (!src || src.startsWith('data:') || !isOurUrl(img.currentSrc || src)) return;
 
     // Native lazy images close to the viewport: load them now instead of waiting.
-    if (near && img.loading === 'lazy') img.loading = 'eager';
+    if (near && settings.eagerLazy && img.loading === 'lazy') img.loading = 'eager';
 
     const loaded = img.complete && img.naturalWidth > 0;
-    if (loaded) return;
+    if (loaded || !settings.imageRecovery) return;
 
     const st = stateFor(img, now);
     if (!st.orig) { st.orig = src; st.origSet = img.getAttribute('srcset'); }
@@ -230,6 +240,7 @@
   const bgState = new WeakMap();
 
   function considerBackground(el, now) {
+    if (!settings.imageRecovery) return;
     let st = bgState.get(el);
     if (st && (st.done || st.busy || now < st.nextAt)) return;
     const m = /url\((['"]?)(.*?)\1\)/i.exec(el.style.backgroundImage || '');
@@ -267,6 +278,7 @@
   }
 
   async function repairStylesheet(link) {
+    if (!settings.cssRepair) return false;
     if (link.dataset.v3lRepair) return link.dataset.v3lRepair === 'done';
     link.dataset.v3lRepair = 'pending';
     const href = link.href;
@@ -314,6 +326,7 @@
   }
 
   async function checkStylesheets(force = false) {
+    if (!settings.cssRepair) return true;
     const links = brokenStylesheets(Date.now(), force);
     if (!links.length) return true;
     log('broken stylesheets:', links.map((l) => l.href));
@@ -353,6 +366,7 @@
   }
 
   function reloadOnce(reason) {
+    if (!settings.autoReload) return false;
     const last = Number(sessionStorage.getItem(RELOAD_KEY) || 0);
     if (Date.now() - last < 30000) return false;
     sessionStorage.setItem(RELOAD_KEY, String(Date.now()));

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "V3rmillion Loader",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Makes v3rmillion.net load completely on flaky VPN/proxy connections by detecting and retrying failed stylesheets, scripts and images.",
   "permissions": ["storage"],
   "host_permissions": [

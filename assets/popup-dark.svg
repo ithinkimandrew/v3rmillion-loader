@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="600" viewBox="0 0 360 600" role="img" aria-label="V3rmillion Loader popup, dark theme">
+  <defs>
+    <radialGradient id="g" cx="100%" cy="0%" r="70%"><stop offset="0" stop-color="#8f1010" stop-opacity=".35"/><stop offset="1" stop-color="#8f1010" stop-opacity="0"/></radialGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e02424"/><stop offset="1" stop-color="#8f1010"/></linearGradient>
+    <clipPath id="frame"><rect width="360" height="600" rx="16"/></clipPath>
+  </defs>
+  <style>
+    @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .in{animation:in .5s ease-out both}
+    @keyframes ring{from{stroke-dashoffset:213.63}to{stroke-dashoffset:87.59}}
+    .ring{animation:ring 1.4s .6s cubic-bezier(.2,.8,.2,1) both}
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="360" height="600" fill="#0f0f11"/>
+    <rect width="360" height="600" fill="url(#g)"/>
+
+    <rect x="16" y="16" width="36" height="36" rx="10" fill="url(#logo)"/>
+    <text x="34" y="40" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="800" fill="#ffffff">V3</text>
+    <text x="62" y="32" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f2f2f3">V3rmillion Loader</text>
+    <text x="62" y="48" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11.5" fill="#6b6b74">v1.4.0</text>
+    <g transform="translate(-6 0)"><rect x="286" y="18" width="32" height="32" rx="9" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".08"/>
+    <path d="M298 28a7 7 0 1 0 8 8 5.5 5.5 0 0 1-8-8z" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linejoin="round"/></g>
+    <rect x="324" y="18" width="32" height="32" rx="9" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".08" transform="translate(-4 0)"/>
+    <path d="M342 34a6 6 0 1 1-1.8-4.3M342 27.5v3.5h-3.5" transform="translate(-4 0)" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="16" y="64" width="328" height="34" rx="10" fill="#1e1e22"/>
+    <rect x="19" y="67" width="161" height="28" rx="8" fill="#2a2a30"/>
+    <text x="99.5" y="85.5" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#f2f2f3">Overview</text>
+    <text x="261" y="85.5" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#a1a1aa">Settings</text>
+
+    <g class="in">
+      <rect x="16" y="110" width="328" height="82" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08" />
+      <rect x="16" y="124" width="4" height="54" rx="2" fill="#c21b1b"/>
+      <rect x="32" y="131" width="40" height="40" rx="11" fill="rgba(194,27,27,.16)"/>
+      <path d="M58 142a5 5 0 0 0-6.6 6.2l-6.4 6.4 2.4 2.4 6.4-6.4a5 5 0 0 0 6.2-6.6l-3 3-2.2-.6-.6-2.2z" fill="none" stroke="#c21b1b" stroke-width="1.7" stroke-linejoin="round"/>
+      <text x="86" y="145" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#f2f2f3">Fixes applied</text>
+      <text x="86" y="164" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">4 loading problems were found</text>
+      <text x="86" y="180" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">and repaired on this page.</text>
+    </g>
+
+    
+    <g class="in" style="animation-delay:0.16599999999999998s">
+      <rect x="16" y="204" width="104" height="82" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08" />
+      <g transform="translate(30 216)" fill="none" stroke="#c21b1b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2L6 10M4 11c-2 0-3 2-3 4 2 0 4-1 4-3z"/></g>
+      <text x="30" y="258" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#f2f2f3">1</text>
+      <text x="30" y="276" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Styles</text>
+    </g>
+    
+    <g class="in" style="animation-delay:0.278s">
+      <rect x="128" y="204" width="104" height="82" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08" />
+      <g transform="translate(142 216)" fill="none" stroke="#c21b1b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="14" height="14" rx="3"/><circle cx="6" cy="6" r="1.5"/><path d="M15 11l-4-4-8 8"/></g>
+      <text x="142" y="258" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#f2f2f3">3</text>
+      <text x="142" y="276" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Images</text>
+    </g>
+    
+    <g class="in" style="animation-delay:0.39s">
+      <rect x="240" y="204" width="104" height="82" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08" />
+      <g transform="translate(254 216)" fill="none" stroke="#6b6b74" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8a6 6 0 1 1-2-4.5M14 2v4h-4"/></g>
+      <text x="254" y="258" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="800" fill="#f2f2f3">0</text>
+      <text x="254" y="276" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Reloads</text>
+    </g>
+
+    <g class="in" style="animation-delay:.35s">
+      <rect x="16" y="298" width="328" height="152" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08" />
+      <text x="30" y="326" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#f2f2f3">Activity</text>
+      <rect x="88" y="313" width="22" height="18" rx="9" fill="#1e1e22"/>
+      <text x="99" y="326" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#a1a1aa">4</text>
+      <path d="M322 324l5-5 5 5" fill="none" stroke="#6b6b74" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="16" y="336" width="328" height="1" fill="#ffffff" fill-opacity=".08"/>
+    </g>
+    <g class="in" style="animation-delay:0.45s">
+      <rect x="30" y="344" width="26" height="26" rx="8" fill="rgba(194,27,27,.16)"/>
+      <g transform="translate(35 349)" fill="none" stroke="#c21b1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ><rect x="1" y="1" width="14" height="14" rx="3"/><circle cx="6" cy="6" r="1.5"/><path d="M15 11l-4-4-8 8"/></g>
+      <text x="66" y="355" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">Image recovered</text>
+      <text x="66" y="369" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b6b74">user-assets.v3rm.net/.../233893.jpg</text>
+      <text x="330" y="361" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b6b74">just now</text>
+    </g>
+    <g class="in" style="animation-delay:0.5700000000000001s">
+      <rect x="30" y="380" width="26" height="26" rx="8" fill="rgba(194,27,27,.16)"/>
+      <g transform="translate(35 385)" fill="none" stroke="#c21b1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ><rect x="1" y="1" width="14" height="14" rx="3"/><circle cx="6" cy="6" r="1.5"/><path d="M15 11l-4-4-8 8"/></g>
+      <text x="66" y="391" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">Image recovered</text>
+      <text x="66" y="405" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b6b74">user-assets.v3rm.net/.../112936.jpg</text>
+      <text x="330" y="397" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b6b74">4s ago</text>
+    </g>
+    <g class="in" style="animation-delay:0.69s">
+      <rect x="30" y="416" width="26" height="26" rx="8" fill="rgba(194,27,27,.16)"/>
+      <g transform="translate(35 421)" fill="none" stroke="#c21b1b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" ><path d="M14 2L6 10M4 11c-2 0-3 2-3 4 2 0 4-1 4-3z"/></g>
+      <text x="66" y="427" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">Stylesheet repaired</text>
+      <text x="66" y="441" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b6b74">v3rmillion.net/css.php?css=public...</text>
+      <text x="330" y="433" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="10.5" fill="#6b6b74">9s ago</text>
+    </g>
+
+    <g class="in" style="animation-delay:.55s">
+      <rect x="16" y="462" width="328" height="122" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08" />
+      <text x="30" y="486" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="#a1a1aa">LIFETIME</text>
+      <circle cx="74" cy="534" r="34" fill="none" stroke="#1e1e22" stroke-width="8"/>
+      <circle class="ring" cx="74" cy="534" r="34" fill="none" stroke="#c21b1b" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.63" transform="rotate(-90 74 534)"/>
+      <text x="74" y="536" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#f2f2f3">59%</text>
+      <text x="74" y="550" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="9.5" fill="#6b6b74">repaired</text>
+      <text x="138" y="506" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Pages visited</text><text x="328" y="506" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">22</text>
+      <text x="138" y="526" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Pages repaired</text><text x="328" y="526" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">13</text>
+      <text x="138" y="546" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Images recovered</text><text x="328" y="546" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">122</text>
+      <text x="138" y="566" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#a1a1aa">Styles fixed</text><text x="328" y="566" text-anchor="end" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#f2f2f3">1</text>
+    </g>
+  </g>
+  <rect x=".5" y=".5" width="359" height="599" rx="16" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+</svg>

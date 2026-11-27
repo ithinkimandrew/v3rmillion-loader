@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="V3rmillion Loader: repairs half-loaded v3rmillion.net pages">
+  <defs>
+    <radialGradient id="glow" cx="88%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#8f1010"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" x2="1">
+      <stop offset="0" stop-color="#c21b1b"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".035"/>
+    </pattern>
+    <clipPath id="card"><rect width="1200" height="320" rx="24"/></clipPath>
+  </defs>
+  <style>
+    .pop{transform-box:fill-box;transform-origin:center}
+    @keyframes fx0{0%,12%{opacity:0;transform:scale(.6)}15%{opacity:1;transform:scale(1.08)}17%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx0{0%,12%{opacity:1}15%,90%{opacity:0}97%,100%{opacity:1}}
+.f0{animation:fx0 8s ease-out infinite}.b0{animation:bx0 8s ease-out infinite}
+@keyframes fx1{0%,18.5%{opacity:0;transform:scale(.6)}21.5%{opacity:1;transform:scale(1.08)}23.5%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx1{0%,18.5%{opacity:1}21.5%,90%{opacity:0}97%,100%{opacity:1}}
+.f1{animation:fx1 8s ease-out infinite}.b1{animation:bx1 8s ease-out infinite}
+@keyframes fx2{0%,25%{opacity:0;transform:scale(.6)}28%{opacity:1;transform:scale(1.08)}30%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx2{0%,25%{opacity:1}28%,90%{opacity:0}97%,100%{opacity:1}}
+.f2{animation:fx2 8s ease-out infinite}.b2{animation:bx2 8s ease-out infinite}
+@keyframes fx3{0%,31.5%{opacity:0;transform:scale(.6)}34.5%{opacity:1;transform:scale(1.08)}36.5%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx3{0%,31.5%{opacity:1}34.5%,90%{opacity:0}97%,100%{opacity:1}}
+.f3{animation:fx3 8s ease-out infinite}.b3{animation:bx3 8s ease-out infinite}
+@keyframes fx4{0%,38%{opacity:0;transform:scale(.6)}41%{opacity:1;transform:scale(1.08)}43%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx4{0%,38%{opacity:1}41%,90%{opacity:0}97%,100%{opacity:1}}
+.f4{animation:fx4 8s ease-out infinite}.b4{animation:bx4 8s ease-out infinite}
+@keyframes fx5{0%,44.5%{opacity:0;transform:scale(.6)}47.5%{opacity:1;transform:scale(1.08)}49.5%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx5{0%,44.5%{opacity:1}47.5%,90%{opacity:0}97%,100%{opacity:1}}
+.f5{animation:fx5 8s ease-out infinite}.b5{animation:bx5 8s ease-out infinite}
+@keyframes fx6{0%,51%{opacity:0;transform:scale(.6)}54%{opacity:1;transform:scale(1.08)}56%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx6{0%,51%{opacity:1}54%,90%{opacity:0}97%,100%{opacity:1}}
+.f6{animation:fx6 8s ease-out infinite}.b6{animation:bx6 8s ease-out infinite}
+@keyframes fx7{0%,57.5%{opacity:0;transform:scale(.6)}60.5%{opacity:1;transform:scale(1.08)}62.5%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx7{0%,57.5%{opacity:1}60.5%,90%{opacity:0}97%,100%{opacity:1}}
+.f7{animation:fx7 8s ease-out infinite}.b7{animation:bx7 8s ease-out infinite}
+@keyframes fx8{0%,64%{opacity:0;transform:scale(.6)}67%{opacity:1;transform:scale(1.08)}69%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx8{0%,64%{opacity:1}67%,90%{opacity:0}97%,100%{opacity:1}}
+.f8{animation:fx8 8s ease-out infinite}.b8{animation:bx8 8s ease-out infinite}
+@keyframes fx9{0%,70.5%{opacity:0;transform:scale(.6)}73.5%{opacity:1;transform:scale(1.08)}75.5%,88%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(1)}}
+@keyframes bx9{0%,70.5%{opacity:1}73.5%,90%{opacity:0}97%,100%{opacity:1}}
+.f9{animation:fx9 8s ease-out infinite}.b9{animation:bx9 8s ease-out infinite}
+
+    @keyframes fill{0%,12%{transform:scaleX(0)}75.5%,88%{transform:scaleX(1)}94%,100%{transform:scaleX(0)}}
+    .fill{transform-box:fill-box;transform-origin:left;animation:fill 8s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+    .dot{animation:pulse 1.6s ease-in-out infinite}
+  </style>
+  <g clip-path="url(#card)">
+    <rect width="1200" height="320" fill="#0f0f11"/>
+    <rect width="1200" height="320" fill="url(#grid)"/>
+    <rect width="1200" height="320" fill="url(#glow)"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="319" rx="24" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+
+  <rect x="64" y="64" width="100" height="100" rx="24" fill="url(#logo)"/>
+  <rect x="64" y="64" width="100" height="50" rx="24" fill="#ffffff" fill-opacity=".08"/>
+  <text x="114" y="130" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="46" font-weight="800" fill="#ffffff">V3</text>
+
+  <text x="190" y="112" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#f2f2f3">V3rmillion Loader</text>
+  <text x="192" y="152" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="22" fill="#a1a1aa">Repairs half-loaded pages on flaky VPNs and proxies.</text>
+
+  <g transform="translate(960 70)">
+    <rect width="176" height="38" rx="19" fill="#22c55e" fill-opacity=".12" stroke="#22c55e" stroke-opacity=".35"/>
+    <circle class="dot" cx="24" cy="19" r="6" fill="#22c55e"/>
+    <text x="40" y="25" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#22c55e">Watching page</text>
+  </g>
+
+  <g transform="translate(190 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b0">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f0 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#e0573a" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#e0573a"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#e0573a"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(278 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b1">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f1 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#3a8fe0" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#3a8fe0"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#3a8fe0"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(366 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b2">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f2 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#9b5de5" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#9b5de5"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#9b5de5"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(454 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b3">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f3 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#2fbf71" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#2fbf71"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#2fbf71"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(542 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b4">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f4 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#e0a63a" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#e0a63a"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#e0a63a"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(630 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b5">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f5 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#e05a9b" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#e05a9b"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#e05a9b"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(718 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b6">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f6 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#3ac6e0" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#3ac6e0"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#3ac6e0"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(806 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b7">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f7 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#7c8cf0" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#7c8cf0"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#7c8cf0"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(894 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b8">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f8 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#e07a3a" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#e07a3a"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#e07a3a"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(982 204)">
+    <rect width="76" height="56" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <g class="b9">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="none" stroke="#6b6b74" stroke-dasharray="4 4"/>
+      <path d="M30 20h16v16H30z M30 36l6-7 4 4 3-3 3 4" fill="none" stroke="#6b6b74" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M28 18l20 20" stroke="#c21b1b" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <g class="f9 pop">
+      <rect x="6" y="6" width="64" height="44" rx="8" fill="#56c23a" fill-opacity=".22"/>
+      <circle cx="38" cy="23" r="7" fill="#56c23a"/>
+      <path d="M24 46c2-8 8-12 14-12s12 4 14 12z" fill="#56c23a"/>
+      <circle cx="66" cy="10" r="8" fill="#22c55e"/>
+      <path d="M62.5 10l2.5 2.5 4.5-5" fill="none" stroke="#0f0f11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <rect x="190" y="280" width="868" height="6" rx="3" fill="#ffffff" fill-opacity=".07"/>
+  <rect class="fill" x="190" y="280" width="868" height="6" rx="3" fill="url(#bar)"/>
+</svg>

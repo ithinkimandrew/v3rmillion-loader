@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "V3rmillion Loader",
+  "version": "1.1.0",
+  "description": "Makes v3rmillion.net load completely on flaky VPN/proxy connections by detecting and retrying failed stylesheets, scripts and images.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://v3rmillion.net/*",
+    "https://*.v3rmillion.net/*",
+    "https://*.v3rm.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "V3rmillion Loader",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://v3rmillion.net/*", "https://*.v3rmillion.net/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

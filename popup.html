@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>V3rmillion Loader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">V3</span>
+      <div>
+        <h1>V3rmillion Loader</h1>
+        <p class="sub" id="version"></p>
+      </div>
+    </div>
+    <span class="pill" id="status">—</span>
+  </header>
+
+  <section id="page-section">
+    <h2>This page</h2>
+    <div id="not-v3rm" class="empty" hidden>
+      Open <a href="https://v3rmillion.net/" target="_blank">v3rmillion.net</a> to see live repairs.
+    </div>
+    <div id="page-body">
+      <div class="grid">
+        <div class="stat"><b id="p-css">0</b><span>Stylesheets fixed</span></div>
+        <div class="stat"><b id="p-img">0</b><span>Images recovered</span></div>
+        <div class="stat"><b id="p-reload">0</b><span>Auto-reloads</span></div>
+        <div class="stat warn"><b id="p-failed">0</b><span>Unrecoverable</span></div>
+      </div>
+      <h3>Recent activity</h3>
+      <ul id="events" class="events"></ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Lifetime <span class="muted" id="since"></span></h2>
+    <div class="grid">
+      <div class="stat"><b id="l-pages">0</b><span>Pages visited</span></div>
+      <div class="stat"><b id="l-repaired">0</b><span>Pages repaired</span></div>
+      <div class="stat"><b id="l-css">0</b><span>Stylesheets fixed</span></div>
+      <div class="stat"><b id="l-img">0</b><span>Images recovered</span></div>
+      <div class="stat"><b id="l-reload">0</b><span>Auto-reloads</span></div>
+      <div class="stat"><b id="l-challenge">0</b><span>CF checks seen</span></div>
+    </div>
+    <div class="bar-wrap" title="Share of visited pages that needed a repair">
+      <div class="bar"><div class="fill" id="l-bar"></div></div>
+      <span id="l-rate">0% of pages needed a fix</span>
+    </div>
+  </section>
+
+  <footer>
+    <span class="muted" id="last-fix"></span>
+    <button id="reset" type="button">Reset stats</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

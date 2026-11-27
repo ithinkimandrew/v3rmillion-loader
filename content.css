@@ -1,0 +1,40 @@
+/* Images that still failed after all retries: show a neutral tile instead of a broken icon. */
+img.v3l-broken {
+  color: transparent !important;
+  background: rgba(127, 127, 127, 0.18) !important;
+  outline: 1px dashed rgba(127, 127, 127, 0.35);
+  outline-offset: -1px;
+}
+
+#v3l-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #8f1010;
+  color: #fff;
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+#v3l-banner button {
+  border: 0;
+  border-radius: 5px;
+  padding: 4px 10px;
+  background: #fff;
+  color: #8f1010;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+#v3l-banner button.v3l-close {
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  padding: 0 4px;
+}

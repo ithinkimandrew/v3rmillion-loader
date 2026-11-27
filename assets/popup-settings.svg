@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="600" viewBox="0 0 360 600" role="img" aria-label="V3rmillion Loader popup, Settings tab in dark theme">
+  <defs>
+    <radialGradient id="g" cx="100%" cy="0%" r="70%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="logo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#8f1010"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="360" height="600" rx="16"/></clipPath>
+  </defs>
+  <style>
+    .sf{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif}
+    @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .in{animation:in .5s ease-out both}
+
+    /* Subtle Appearance segmented control cycle: Dark -> Auto -> Dark */
+    @keyframes segSlide{
+      0%,34%{transform:translateX(50px)}
+      42%,66%{transform:translateX(0px)}
+      74%,100%{transform:translateX(50px)}
+    }
+    @keyframes txtDark{
+      0%,34%{fill:#f2f2f3}
+      42%,66%{fill:#a1a1aa}
+      74%,100%{fill:#f2f2f3}
+    }
+    @keyframes txtAuto{
+      0%,34%{fill:#a1a1aa}
+      42%,66%{fill:#f2f2f3}
+      74%,100%{fill:#a1a1aa}
+    }
+    @keyframes savedFade{
+      0%,39%{opacity:0}
+      44%,60%{opacity:1}
+      66%,72%{opacity:0}
+      77%,92%{opacity:1}
+      98%,100%{opacity:0}
+    }
+    @keyframes restoreState{
+      0%,36%{opacity:.55}
+      42%,68%{opacity:1}
+      74%,100%{opacity:.55}
+    }
+    @keyframes swGlow{
+      0%,100%{opacity:.92}
+      50%{opacity:1}
+    }
+    .seg-active{animation:segSlide 8s cubic-bezier(.4,0,.2,1) infinite}
+    .lbl-dark{animation:txtDark 8s ease-in-out infinite}
+    .lbl-auto{animation:txtAuto 8s ease-in-out infinite}
+    .saved-ind{animation:savedFade 8s ease-in-out infinite}
+    .restore-btn{animation:restoreState 8s ease-in-out infinite}
+    .sw-on{animation:swGlow 3.2s ease-in-out infinite}
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="360" height="600" fill="#0f0f11"/>
+    <rect width="360" height="600" fill="url(#g)"/>
+
+    <!-- Header (matches popup-dark.svg pixel-for-pixel) -->
+    <rect x="16" y="16" width="36" height="36" rx="10" fill="url(#logo)"/>
+    <text x="34" y="40" text-anchor="middle" class="sf" font-size="15" font-weight="800" fill="#ffffff">V3</text>
+    <text x="62" y="32" class="sf" font-size="15" font-weight="700" fill="#f2f2f3">V3rmillion Loader</text>
+    <text x="62" y="48" class="sf" font-size="11.5" fill="#6b6b74">v1.4.0</text>
+    <g transform="translate(-6 0)">
+      <rect x="286" y="18" width="32" height="32" rx="9" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".08"/>
+      <path d="M298 28a7 7 0 1 0 8 8 5.5 5.5 0 0 1-8-8z" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linejoin="round"/>
+    </g>
+    <rect x="324" y="18" width="32" height="32" rx="9" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".08" transform="translate(-4 0)"/>
+    <path d="M342 34a6 6 0 1 1-1.8-4.3M342 27.5v3.5h-3.5" transform="translate(-4 0)" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Tabs: Settings active -->
+    <rect x="16" y="64" width="328" height="34" rx="10" fill="#1e1e22"/>
+    <rect x="180" y="67" width="161" height="28" rx="8" fill="#2a2a30"/>
+    <text x="99.5" y="85.5" text-anchor="middle" class="sf" font-size="12.5" font-weight="600" fill="#a1a1aa">Overview</text>
+    <text x="260.5" y="85.5" text-anchor="middle" class="sf" font-size="12.5" font-weight="700" fill="#f2f2f3">Settings</text>
+
+    <!-- ================= APPEARANCE ================= -->
+    <g class="in">
+      <text x="20" y="114" class="sf" font-size="10.5" font-weight="700" letter-spacing="1.1" fill="#6b6b74">APPEARANCE</text>
+      <rect x="16" y="120" width="328" height="46" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+      <text x="28" y="140" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">Theme</text>
+      <text x="28" y="155" class="sf" font-size="10" fill="#6b6b74">Match system or pick one</text>
+
+      <!-- Auto / Dark / Light segmented control -->
+      <rect x="182" y="129" width="154" height="28" rx="8" fill="#1e1e22"/>
+      <rect class="seg-active" x="184" y="131" width="50" height="24" rx="6.5" fill="#2a2a30"/>
+      <text x="209" y="146.5" text-anchor="middle" class="sf lbl-auto" font-size="11" font-weight="600">Auto</text>
+      <text x="259" y="146.5" text-anchor="middle" class="sf lbl-dark" font-size="11" font-weight="600">Dark</text>
+      <text x="309" y="146.5" text-anchor="middle" class="sf" font-size="11" font-weight="600" fill="#a1a1aa">Light</text>
+    </g>
+
+    <!-- ================= REPAIRS ================= -->
+    <g class="in" style="animation-delay:.12s">
+      <text x="20" y="182" class="sf" font-size="10.5" font-weight="700" letter-spacing="1.1" fill="#6b6b74">REPAIRS</text>
+      <rect x="16" y="188" width="328" height="164" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+
+      <!-- Row 1: Image recovery -->
+      <text x="28" y="206" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">Image recovery</text>
+      <text x="28" y="220" class="sf" font-size="10.5" fill="#6b6b74">Retry broken avatars, icons and attachments</text>
+      <rect class="sw-on" x="298" y="198" width="34" height="20" rx="10" fill="#c21b1b"/>
+      <circle cx="322" cy="208" r="7" fill="#ffffff"/>
+      <line x1="16" y1="229" x2="344" y2="229" stroke="#ffffff" stroke-opacity=".06"/>
+
+      <!-- Row 2: Stylesheet repair -->
+      <text x="28" y="247" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">Stylesheet repair</text>
+      <text x="28" y="261" class="sf" font-size="10.5" fill="#6b6b74">Fetch page styles again if they fail</text>
+      <rect class="sw-on" x="298" y="239" width="34" height="20" rx="10" fill="#c21b1b"/>
+      <circle cx="322" cy="249" r="7" fill="#ffffff"/>
+      <line x1="16" y1="270" x2="344" y2="270" stroke="#ffffff" stroke-opacity=".06"/>
+
+      <!-- Row 3: Auto-reload -->
+      <text x="28" y="288" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">Auto-reload</text>
+      <text x="28" y="302" class="sf" font-size="10.5" fill="#6b6b74">Reload once if the site's scripts don't start</text>
+      <rect class="sw-on" x="298" y="280" width="34" height="20" rx="10" fill="#c21b1b"/>
+      <circle cx="322" cy="290" r="7" fill="#ffffff"/>
+      <line x1="16" y1="311" x2="344" y2="311" stroke="#ffffff" stroke-opacity=".06"/>
+
+      <!-- Row 4: Preload nearby images -->
+      <text x="28" y="329" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">Preload nearby images</text>
+      <text x="28" y="343" class="sf" font-size="10.5" fill="#6b6b74">Load lazy images before you scroll to them</text>
+      <rect class="sw-on" x="298" y="321" width="34" height="20" rx="10" fill="#c21b1b"/>
+      <circle cx="322" cy="331" r="7" fill="#ffffff"/>
+    </g>
+
+    <!-- ================= INTERFACE ================= -->
+    <g class="in" style="animation-delay:.24s">
+      <text x="20" y="368" class="sf" font-size="10.5" font-weight="700" letter-spacing="1.1" fill="#6b6b74">INTERFACE</text>
+      <rect x="16" y="374" width="328" height="82" rx="12" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+
+      <!-- Row 1: Toolbar badge -->
+      <text x="28" y="392" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">Toolbar badge</text>
+      <text x="28" y="406" class="sf" font-size="10.5" fill="#6b6b74">Show the fix count on the extension icon</text>
+      <rect class="sw-on" x="298" y="384" width="34" height="20" rx="10" fill="#c21b1b"/>
+      <circle cx="322" cy="394" r="7" fill="#ffffff"/>
+      <line x1="16" y1="415" x2="344" y2="415" stroke="#ffffff" stroke-opacity=".06"/>
+
+      <!-- Row 2: In-page alerts -->
+      <text x="28" y="433" class="sf" font-size="12.5" font-weight="600" fill="#f2f2f3">In-page alerts</text>
+      <text x="28" y="447" class="sf" font-size="10.5" fill="#6b6b74">Show a banner when something can't be fixed</text>
+      <rect class="sw-on" x="298" y="425" width="34" height="20" rx="10" fill="#c21b1b"/>
+      <circle cx="322" cy="435" r="7" fill="#ffffff"/>
+    </g>
+
+    <!-- ================= RESTORE DEFAULTS + SAVED ================= -->
+    <g class="in" style="animation-delay:.34s">
+      <g class="restore-btn">
+        <rect x="16" y="468" width="328" height="34" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".09"/>
+        <path d="M88 485a5.5 5.5 0 1 0 1.6-3.9M88 479.5v3.5h3.5" fill="none" stroke="#f2f2f3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="190" y="489" text-anchor="middle" class="sf" font-size="12" font-weight="600" fill="#f2f2f3">Restore recommended defaults</text>
+      </g>
+      <text x="180" y="520" text-anchor="middle" class="sf" font-size="10.5" fill="#6b6b74">Recommended: dark theme with every repair</text>
+      <text x="164" y="535" text-anchor="middle" class="sf" font-size="10.5" fill="#6b6b74">and alert turned on.</text>
+      <text x="224" y="535" class="sf saved-ind" font-size="10.5" font-weight="700" fill="#22c55e">Saved</text>
+    </g>
+
+    <!-- Footer (matches popup.html footer) -->
+    <line x1="0" y1="556" x2="360" y2="556" stroke="#ffffff" stroke-opacity=".07"/>
+    <text x="16" y="582" class="sf" font-size="11" fill="#6b6b74">Last fix: just now</text>
+    <text x="344" y="582" text-anchor="end" class="sf" font-size="11" font-weight="500" fill="#6b6b74">Reset stats</text>
+  </g>
+  <rect x=".5" y=".5" width="359" height="599" rx="16" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+</svg>

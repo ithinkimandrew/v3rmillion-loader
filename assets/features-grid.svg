@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="V3rmillion Loader capability showcase: stylesheet repair, image recovery, continuous scanner, script watchdog, popup dashboard, and Cloudflare and ad-blocker safety">
+  <defs>
+    <radialGradient id="fgGlowL" cx="12%" cy="10%" r="55%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fgGlowR" cx="90%" cy="92%" r="50%">
+      <stop offset="0" stop-color="#c21b1b" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#c21b1b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sweepRed" x1="0" x2="1">
+      <stop offset="0" stop-color="#e02424" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e02424" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#e02424" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="radarGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shieldScan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#22c55e" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="fgGrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#ffffff" stroke-opacity=".03"/>
+    </pattern>
+    <clipPath id="fgFrame"><rect width="1200" height="420" rx="20"/></clipPath>
+    <clipPath id="cssClip"><rect x="18" y="18" width="46" height="46" rx="11"/></clipPath>
+    <clipPath id="shieldClip"><rect x="18" y="18" width="46" height="46" rx="11"/></clipPath>
+  </defs>
+  <style>
+    .t-title{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:17px;font-weight:700;fill:#f2f2f3}
+    .t-desc{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:12.5px;fill:#a1a1aa}
+    .t-mono{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:10.5px;font-weight:700;letter-spacing:.7px}
+    .t-chip{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:10px;font-weight:600}
+
+    /* Card 1: Stylesheet repair */
+    @keyframes cssSweep{0%{transform:translateX(-50px)}55%,100%{transform:translateX(56px)}}
+    @keyframes cssFail{0%,30%{opacity:1}38%,84%{opacity:0}92%,100%{opacity:1}}
+    @keyframes cssFix{0%,30%{opacity:0}38%,84%{opacity:1}92%,100%{opacity:0}}
+    @keyframes cssBar{0%,28%{transform:scaleX(.18)}45%,84%{transform:scaleX(1)}94%,100%{transform:scaleX(.18)}}
+    .css-sweep{animation:cssSweep 4.2s ease-in-out infinite}
+    .css-fail{animation:cssFail 4.2s ease-in-out infinite}
+    .css-fix{animation:cssFix 4.2s ease-in-out infinite}
+    .css-bar{transform-box:fill-box;transform-origin:left;animation:cssBar 4.2s ease-in-out infinite}
+
+    /* Card 2: Image recovery */
+    @keyframes imgBroken{0%,34%{opacity:1}42%,86%{opacity:0}94%,100%{opacity:1}}
+    @keyframes imgOk{0%,34%{opacity:0;transform:scale(.75)}42%{opacity:1;transform:scale(1.06)}46%,86%{opacity:1;transform:scale(1)}94%,100%{opacity:0;transform:scale(.85)}}
+    @keyframes p1{0%,12%{opacity:.3}18%,30%{opacity:1}36%,100%{opacity:.3}}
+    @keyframes p2{0%,22%{opacity:.3}28%,40%{opacity:1}46%,100%{opacity:.3}}
+    @keyframes p3{0%,32%{opacity:.3}38%,84%{opacity:1}92%,100%{opacity:.3}}
+    .img-broken{animation:imgBroken 4.6s ease-in-out infinite}
+    .img-ok{transform-box:fill-box;transform-origin:center;animation:imgOk 4.6s ease-out infinite}
+    .pip1{animation:p1 4.6s ease-in-out infinite}
+    .pip2{animation:p2 4.6s ease-in-out infinite}
+    .pip3{animation:p3 4.6s ease-in-out infinite}
+
+    /* Card 3: Continuous scanner */
+    @keyframes radarSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    @keyframes blip{0%,100%{opacity:.2;transform:scale(.8)}35%{opacity:1;transform:scale(1.25)}70%{opacity:.3;transform:scale(.9)}}
+    @keyframes waveA{0%,100%{opacity:.35}20%{opacity:1}40%{opacity:.35}}
+    @keyframes waveB{0%,20%,100%{opacity:.35}40%{opacity:1}60%{opacity:.35}}
+    @keyframes waveC{0%,40%,100%{opacity:.35}60%{opacity:1}80%{opacity:.35}}
+    @keyframes waveD{0%,60%,100%{opacity:.35}80%{opacity:1}95%{opacity:.35}}
+    .radar{transform-box:fill-box;transform-origin:center;animation:radarSpin 3.6s linear infinite}
+    .blip1{transform-box:fill-box;transform-origin:center;animation:blip 3.6s ease-in-out infinite}
+    .blip2{transform-box:fill-box;transform-origin:center;animation:blip 3.6s 1.8s ease-in-out infinite}
+    .wa{animation:waveA 3.2s ease-in-out infinite}
+    .wb{animation:waveB 3.2s ease-in-out infinite}
+    .wc{animation:waveC 3.2s ease-in-out infinite}
+    .wd{animation:waveD 3.2s ease-in-out infinite}
+
+    /* Card 4: Script watchdog */
+    @keyframes watchSpin{0%,60%{transform:rotate(0deg)}85%,100%{transform:rotate(360deg)}}
+    @keyframes hb{0%{stroke-dashoffset:120}100%{stroke-dashoffset:0}}
+    @keyframes guardPulse{0%,100%{opacity:.55}50%{opacity:1}}
+    .watch-spin{transform-box:fill-box;transform-origin:center;animation:watchSpin 4.4s cubic-bezier(.4,0,.2,1) infinite}
+    .hb-line{stroke-dasharray:40 80;animation:hb 2.6s linear infinite}
+    .guard-dot{animation:guardPulse 2s ease-in-out infinite}
+
+    /* Card 5: Popup dashboard */
+    @keyframes ringBreath{0%,100%{stroke-dashoffset:24}50%{stroke-dashoffset:14}}
+    @keyframes barA{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+    @keyframes barB{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(.45)}}
+    @keyframes barC{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(.92)}}
+    @keyframes badgePop{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+    .ui-ring{animation:ringBreath 3.8s ease-in-out infinite}
+    .ba{transform-box:fill-box;transform-origin:bottom;animation:barA 2.8s ease-in-out infinite}
+    .bb{transform-box:fill-box;transform-origin:bottom;animation:barB 2.8s .35s ease-in-out infinite}
+    .bc{transform-box:fill-box;transform-origin:bottom;animation:barC 2.8s .7s ease-in-out infinite}
+    .badge-pop{transform-box:fill-box;transform-origin:center;animation:badgePop 2.4s ease-in-out infinite}
+
+    /* Card 6: Cloudflare and ad-blocker safe */
+    @keyframes shScan{0%{transform:translateY(-28px)}100%{transform:translateY(48px)}}
+    @keyframes safeCheck{0%,100%{opacity:.75}50%{opacity:1}}
+    .sh-scan{animation:shScan 3s ease-in-out infinite}
+    .safe-chk{animation:safeCheck 2.4s ease-in-out infinite}
+  </style>
+
+  <g clip-path="url(#fgFrame)">
+    <rect width="1200" height="420" fill="#0f0f11"/>
+    <rect width="1200" height="420" fill="url(#fgGrid)"/>
+    <rect width="1200" height="420" fill="url(#fgGlowL)"/>
+    <rect width="1200" height="420" fill="url(#fgGlowR)"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="419" rx="20" fill="none" stroke="#ffffff" stroke-opacity=".085"/>
+
+  <!-- ================= CARD 1: Stylesheet repair ================= -->
+  <g transform="translate(24 24)">
+    <rect width="372" height="177" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <rect x="0" y="18" width="3" height="36" rx="1.5" fill="#e02424"/>
+    <!-- Tag -->
+    <rect x="306" y="18" width="48" height="22" rx="11" fill="#e02424" fill-opacity=".14" stroke="#e02424" stroke-opacity=".32"/>
+    <text x="330" y="32.5" text-anchor="middle" class="t-mono" fill="#e02424">CSS</text>
+    <!-- Animated Icon Box -->
+    <rect x="18" y="18" width="46" height="46" rx="11" fill="#1e1e22" stroke="#e02424" stroke-opacity=".28"/>
+    <g clip-path="url(#cssClip)">
+      <rect x="27" y="28" width="28" height="4" rx="2" fill="#6b6b74" class="css-fail"/>
+      <rect x="27" y="37" width="18" height="4" rx="2" fill="#6b6b74" class="css-fail"/>
+      <rect x="27" y="46" width="24" height="4" rx="2" fill="#c21b1b" class="css-fail"/>
+      <rect x="27" y="28" width="28" height="4" rx="2" fill="#e02424" class="css-fix"/>
+      <rect x="27" y="37" width="22" height="4" rx="2" fill="#f2f2f3" class="css-fix"/>
+      <rect x="27" y="46" width="28" height="4" rx="2" fill="#22c55e" class="css-fix"/>
+      <rect x="18" y="18" width="20" height="46" fill="url(#sweepRed)" class="css-sweep"/>
+    </g>
+    <!-- Copy -->
+    <text x="78" y="38" class="t-title">Stylesheet repair</text>
+    <text x="78" y="57" class="t-desc">Detects failed or empty css.php</text>
+    <text x="18" y="92" class="t-desc">Re-fetches dropped stylesheets with backoff</text>
+    <text x="18" y="110" class="t-desc">and injects clean rules without page flicker.</text>
+    <!-- Micro telemetry bar -->
+    <rect x="18" y="132" width="336" height="28" rx="8" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="30" y="149.5" class="t-chip" fill="#a1a1aa">css.php</text>
+    <rect x="86" y="143" width="174" height="6" rx="3" fill="#26262b"/>
+    <rect x="86" y="143" width="174" height="6" rx="3" fill="#22c55e" class="css-bar"/>
+    <text x="342" y="149.5" text-anchor="end" class="t-chip css-fail" fill="#e02424">ERR 0</text>
+    <text x="342" y="149.5" text-anchor="end" class="t-chip css-fix" fill="#22c55e">200 OK</text>
+  </g>
+
+  <!-- ================= CARD 2: Image recovery ================= -->
+  <g transform="translate(414 24)">
+    <rect width="372" height="177" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <rect x="0" y="18" width="3" height="36" rx="1.5" fill="#e02424"/>
+    <rect x="306" y="18" width="48" height="22" rx="11" fill="#e02424" fill-opacity=".14" stroke="#e02424" stroke-opacity=".32"/>
+    <text x="330" y="32.5" text-anchor="middle" class="t-mono" fill="#e02424">IMG</text>
+    <!-- Animated Icon Box -->
+    <rect x="18" y="18" width="46" height="46" rx="11" fill="#1e1e22" stroke="#e02424" stroke-opacity=".28"/>
+    <g class="img-broken">
+      <rect x="28" y="28" width="26" height="26" rx="5" fill="none" stroke="#6b6b74" stroke-width="1.6" stroke-dasharray="3 3"/>
+      <path d="M29 29l24 24" stroke="#e02424" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g class="img-ok">
+      <rect x="27" y="27" width="28" height="28" rx="6" fill="#22c55e" fill-opacity=".16" stroke="#22c55e" stroke-width="1.5"/>
+      <circle cx="36.5" cy="36.5" r="3" fill="#22c55e"/>
+      <path d="M30 51l7-7 4 4 4-4 7 7" fill="none" stroke="#22c55e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Copy -->
+    <text x="78" y="38" class="t-title">Image recovery</text>
+    <text x="78" y="57" class="t-desc">Off-screen probing, atomic swap</text>
+    <text x="18" y="92" class="t-desc">Rotates original URL, srcset, s/m/l avatar</text>
+    <text x="18" y="110" class="t-desc">sizes and cache-busts before swapping in.</text>
+    <!-- Micro telemetry bar -->
+    <rect x="18" y="132" width="336" height="28" rx="8" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <g class="pip1">
+      <circle cx="34" cy="146" r="3.5" fill="#f59e0b"/>
+      <text x="44" y="149.5" class="t-chip" fill="#a1a1aa">orig</text>
+    </g>
+    <g class="pip2">
+      <circle cx="94" cy="146" r="3.5" fill="#38bdf8"/>
+      <text x="104" y="149.5" class="t-chip" fill="#a1a1aa">srcset</text>
+    </g>
+    <g class="pip3">
+      <circle cx="166" cy="146" r="3.5" fill="#22c55e"/>
+      <text x="176" y="149.5" class="t-chip" fill="#22c55e">s/m/l -&gt; swap</text>
+    </g>
+    <text x="342" y="149.5" text-anchor="end" class="t-chip" fill="#6b6b74">0 flicker</text>
+  </g>
+
+  <!-- ================= CARD 3: Continuous scanner ================= -->
+  <g transform="translate(804 24)">
+    <rect width="372" height="177" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <rect x="0" y="18" width="3" height="36" rx="1.5" fill="#38bdf8"/>
+    <rect x="300" y="18" width="54" height="22" rx="11" fill="#38bdf8" fill-opacity=".13" stroke="#38bdf8" stroke-opacity=".32"/>
+    <text x="327" y="32.5" text-anchor="middle" class="t-mono" fill="#38bdf8">SCAN</text>
+    <!-- Animated Radar Icon Box -->
+    <rect x="18" y="18" width="46" height="46" rx="11" fill="#1e1e22" stroke="#38bdf8" stroke-opacity=".28"/>
+    <g transform="translate(41 41)">
+      <circle r="15" fill="none" stroke="#38bdf8" stroke-opacity=".24" stroke-width="1.2"/>
+      <circle r="8.5" fill="none" stroke="#38bdf8" stroke-opacity=".2" stroke-width="1"/>
+      <g class="radar">
+        <path d="M0 0L0-15A15 15 0 0 1 13-7.5Z" fill="url(#radarGrad)"/>
+        <line x1="0" y1="0" x2="0" y2="-15" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+      </g>
+      <circle cx="0" cy="0" r="2.2" fill="#38bdf8"/>
+      <circle class="blip1" cx="7" cy="-6" r="2.2" fill="#22c55e"/>
+      <circle class="blip2" cx="-8" cy="5" r="2" fill="#e02424"/>
+    </g>
+    <!-- Copy -->
+    <text x="78" y="38" class="t-title">Continuous scanner</text>
+    <text x="78" y="57" class="t-desc">Event-driven + 2.5s watch loop</text>
+    <text x="18" y="92" class="t-desc">Re-checks on scroll, tab focus, reconnect</text>
+    <text x="18" y="110" class="t-desc">and DOM mutations. Preloads nearby lazy art.</text>
+    <!-- Micro telemetry bar -->
+    <rect x="18" y="132" width="336" height="28" rx="8" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <rect x="28" y="138" width="48" height="16" rx="5" fill="#38bdf8" fill-opacity=".14" class="wa"/>
+    <text x="52" y="149.5" text-anchor="middle" class="t-chip wa" fill="#38bdf8">2.5s</text>
+    <rect x="84" y="138" width="58" height="16" rx="5" fill="#38bdf8" fill-opacity=".14" class="wb"/>
+    <text x="113" y="149.5" text-anchor="middle" class="t-chip wb" fill="#38bdf8">scroll</text>
+    <rect x="150" y="138" width="56" height="16" rx="5" fill="#38bdf8" fill-opacity=".14" class="wc"/>
+    <text x="178" y="149.5" text-anchor="middle" class="t-chip wc" fill="#38bdf8">focus</text>
+    <rect x="214" y="138" width="62" height="16" rx="5" fill="#38bdf8" fill-opacity=".14" class="wd"/>
+    <text x="245" y="149.5" text-anchor="middle" class="t-chip wd" fill="#38bdf8">online</text>
+    <rect x="284" y="138" width="58" height="16" rx="5" fill="#22c55e" fill-opacity=".14" class="wa"/>
+    <text x="313" y="149.5" text-anchor="middle" class="t-chip wa" fill="#22c55e">DOM</text>
+  </g>
+
+  <!-- ================= CARD 4: Script watchdog ================= -->
+  <g transform="translate(24 219)">
+    <rect width="372" height="177" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <rect x="0" y="18" width="3" height="36" rx="1.5" fill="#f59e0b"/>
+    <rect x="312" y="18" width="42" height="22" rx="11" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".32"/>
+    <text x="333" y="32.5" text-anchor="middle" class="t-mono" fill="#f59e0b">JS</text>
+    <!-- Animated Watchdog Icon Box -->
+    <rect x="18" y="18" width="46" height="46" rx="11" fill="#1e1e22" stroke="#f59e0b" stroke-opacity=".28"/>
+    <g transform="translate(41 41)">
+      <g class="watch-spin">
+        <path d="M11 0a11 11 0 1 1-3.2-7.8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11-10.5V-5H5.5" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <circle class="guard-dot" r="3" fill="#22c55e"/>
+    </g>
+    <!-- Copy -->
+    <text x="78" y="38" class="t-title">Script watchdog</text>
+    <text x="78" y="57" class="t-desc">Loop-guarded XenForo recovery</text>
+    <text x="18" y="92" class="t-desc">Detects when forum JS bundles stall out and</text>
+    <text x="18" y="110" class="t-desc">reloads once with a strict cooldown guard.</text>
+    <!-- Micro telemetry bar -->
+    <rect x="18" y="132" width="336" height="28" rx="8" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="30" y="149.5" class="t-chip" fill="#f59e0b">XF.init</text>
+    <path d="M90 146h28l6-7 8 14 7-10 5 3h92" fill="none" stroke="#f59e0b" stroke-opacity=".22" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="hb-line" d="M90 146h28l6-7 8 14 7-10 5 3h92" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="342" y="149.5" text-anchor="end" class="t-chip" fill="#22c55e">1x guard</text>
+  </g>
+
+  <!-- ================= CARD 5: Popup dashboard ================= -->
+  <g transform="translate(414 219)">
+    <rect width="372" height="177" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <rect x="0" y="18" width="3" height="36" rx="1.5" fill="#c21b1b"/>
+    <rect x="312" y="18" width="42" height="22" rx="11" fill="#c21b1b" fill-opacity=".16" stroke="#c21b1b" stroke-opacity=".35"/>
+    <text x="333" y="32.5" text-anchor="middle" class="t-mono" fill="#e02424">UI</text>
+    <!-- Animated Mini Dashboard Ring Icon -->
+    <rect x="18" y="18" width="46" height="46" rx="11" fill="#1e1e22" stroke="#c21b1b" stroke-opacity=".32"/>
+    <g transform="translate(41 41)">
+      <circle r="13" fill="none" stroke="#2c2c33" stroke-width="3.2"/>
+      <circle class="ui-ring" r="13" fill="none" stroke="#e02424" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="81.68" stroke-dashoffset="24" transform="rotate(-90)"/>
+      <rect class="ba" x="-6" y="-2" width="3" height="8" rx="1.2" fill="#f2f2f3"/>
+      <rect class="bb" x="-1.5" y="-5" width="3" height="11" rx="1.2" fill="#e02424"/>
+      <rect class="bc" x="3" y="-3" width="3" height="9" rx="1.2" fill="#22c55e"/>
+    </g>
+    <!-- Copy -->
+    <text x="78" y="38" class="t-title">Popup dashboard</text>
+    <text x="78" y="57" class="t-desc">Live stats, timeline &amp; themes</text>
+    <text x="18" y="92" class="t-desc">Per-page counters, activity feed, lifetime</text>
+    <text x="18" y="110" class="t-desc">ring chart, dark/light themes &amp; quick toggles.</text>
+    <!-- Micro telemetry bar -->
+    <rect x="18" y="132" width="336" height="28" rx="8" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <rect x="28" y="138" width="58" height="16" rx="5" fill="#26262c"/>
+    <text x="57" y="149.5" text-anchor="middle" class="t-chip" fill="#f2f2f3">Dark</text>
+    <rect x="92" y="138" width="58" height="16" rx="5" fill="#f2f2f3" fill-opacity=".1"/>
+    <text x="121" y="149.5" text-anchor="middle" class="t-chip" fill="#a1a1aa">Light</text>
+    <text x="166" y="149.5" class="t-chip" fill="#a1a1aa">badge:</text>
+    <g class="badge-pop">
+      <rect x="214" y="138" width="32" height="16" rx="8" fill="#8f1010"/>
+      <text x="230" y="149.5" text-anchor="middle" class="t-chip" fill="#ffffff">+4</text>
+    </g>
+    <text x="342" y="149.5" text-anchor="end" class="t-chip" fill="#22c55e">sync</text>
+  </g>
+
+  <!-- ================= CARD 6: Cloudflare and ad-blocker safe ================= -->
+  <g transform="translate(804 219)">
+    <rect width="372" height="177" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <rect x="0" y="18" width="3" height="36" rx="1.5" fill="#22c55e"/>
+    <rect x="308" y="18" width="46" height="22" rx="11" fill="#22c55e" fill-opacity=".13" stroke="#22c55e" stroke-opacity=".32"/>
+    <text x="331" y="32.5" text-anchor="middle" class="t-mono" fill="#22c55e">SAFE</text>
+    <!-- Animated Shield Icon Box -->
+    <rect x="18" y="18" width="46" height="46" rx="11" fill="#1e1e22" stroke="#22c55e" stroke-opacity=".28"/>
+    <g clip-path="url(#shieldClip)">
+      <path d="M41 26l12 4.5v8.5c0 6.8-5.1 12.6-12 14-6.9-1.4-12-7.2-12-14v-8.5z" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-width="1.7" stroke-linejoin="round"/>
+      <path class="safe-chk" d="M36 41l3.5 3.5L47 37" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect class="sh-scan" x="18" y="18" width="46" height="12" fill="url(#shieldScan)"/>
+    </g>
+    <!-- Copy -->
+    <text x="76" y="38" class="t-title" font-size="14.5">Cloudflare &amp; ad-blocker safe</text>
+    <text x="78" y="57" class="t-desc">Strict non-interference rules</text>
+    <text x="18" y="92" class="t-desc">Never touches Cloudflare challenges and</text>
+    <text x="18" y="110" class="t-desc">skips /assets/ad/ blocked by Brave or uBlock.</text>
+    <!-- Micro telemetry bar -->
+    <rect x="18" y="132" width="336" height="28" rx="8" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <circle cx="34" cy="146" r="3.5" fill="#22c55e" class="safe-chk"/>
+    <text x="45" y="149.5" class="t-chip" fill="#22c55e">cf-check: YIELD</text>
+    <line x1="168" y1="138" x2="168" y2="154" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="182" y="149.5" class="t-chip" fill="#a1a1aa">/assets/ad/:</text>
+    <text x="342" y="149.5" text-anchor="end" class="t-chip" fill="#f59e0b">SKIP</text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="58" viewBox="0 0 960 58" role="img" aria-label="Privacy and Open Source - Security">
+  <defs>
+    <radialGradient id="tg" cx="6%" cy="50%" r="34%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tbar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#8f1010"/>
+    </linearGradient>
+    <linearGradient id="tbeam" x1="0" x2="1">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#22c55e" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="tgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#ffffff" stroke-opacity=".028"/>
+    </pattern>
+    <clipPath id="tclip"><rect width="960" height="58" rx="12"/></clipPath>
+  </defs>
+  <style>
+    @keyframes sweep{0%{transform:translateX(-280px)}100%{transform:translateX(1020px)}}
+    @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.28}}
+    @keyframes barBreath{0%,100%{opacity:.82}50%{opacity:1}}
+    @keyframes shieldPulse{0%,100%{opacity:.65}50%{opacity:1}}
+    .beam{animation:sweep 6.5s cubic-bezier(.4,0,.2,1) infinite}
+    .dp{animation:dotPulse 2s ease-in-out infinite}
+    .ab{animation:barBreath 3s ease-in-out infinite}
+    .sp{animation:shieldPulse 2.4s ease-in-out infinite}
+  </style>
+  <g clip-path="url(#tclip)">
+    <rect width="960" height="58" fill="#0f0f11"/>
+    <rect width="960" height="58" fill="url(#tgrid)"/>
+    <rect width="960" height="58" fill="url(#tg)"/>
+    <rect x="0" y="56" width="960" height="2" fill="#ffffff" fill-opacity=".05"/>
+    <rect class="beam" x="0" y="55.5" width="260" height="2.5" rx="1.25" fill="url(#tbeam)"/>
+  </g>
+  <rect x=".5" y=".5" width="959" height="57" rx="12" fill="none" stroke="#ffffff" stroke-opacity=".09"/>
+
+  <rect class="ab" x="12" y="13" width="3.5" height="32" rx="1.75" fill="url(#tbar)"/>
+  <rect x="26" y="11" width="36" height="36" rx="9" fill="#17171a" stroke="#22c55e" stroke-opacity=".38"/>
+  <g transform="translate(34 18.5)">
+    <path d="M10 1.5l7.5 3v5.5c0 4.6-3.1 8.4-7.5 9.8C5.6 18.4 2.5 14.6 2.5 10V4.5z" fill="#22c55e" fill-opacity=".14" stroke="#f2f2f3" stroke-width="1.6" stroke-linejoin="round"/>
+    <path class="sp" d="M6.8 10.4l2.2 2.2 4.4-4.6" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="76" y="35.5" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="18.5" font-weight="800" letter-spacing="0.5" fill="#f2f2f3">PRIVACY &amp; OPEN SOURCE</text>
+
+  <g transform="translate(768 15)">
+    <rect width="176" height="28" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <circle class="dp" cx="18" cy="14" r="3.5" fill="#22c55e"/>
+    <text x="31" y="18" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11" font-weight="600" letter-spacing="0.9" fill="#a1a1aa">05 // SECURITY</text>
+  </g>
+</svg>

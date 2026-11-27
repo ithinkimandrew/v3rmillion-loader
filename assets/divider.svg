@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="20" viewBox="0 0 1200 20" role="img" aria-label="Section divider">
+  <defs>
+    <linearGradient id="track" x1="0" x2="1">
+      <stop offset="0" stop-color="#8f1010" stop-opacity="0"/>
+      <stop offset=".18" stop-color="#8f1010" stop-opacity=".35"/>
+      <stop offset=".5" stop-color="#c21b1b" stop-opacity=".55"/>
+      <stop offset=".82" stop-color="#8f1010" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pulse" x1="0" x2="1">
+      <stop offset="0" stop-color="#e02424" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ff4d4d" stop-opacity="1"/>
+      <stop offset="1" stop-color="#e02424" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="dc"><rect x="40" y="0" width="1120" height="20"/></clipPath>
+  </defs>
+  <style>
+    @keyframes glide{0%{transform:translateX(-240px)}100%{transform:translateX(1240px)}}
+    @keyframes gem{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}}
+    .gl{animation:glide 5s cubic-bezier(.4,0,.2,1) infinite}
+    .gm{transform-origin:600px 10px;animation:gem 2.5s ease-in-out infinite}
+  </style>
+  <rect x="40" y="9.5" width="1120" height="1.5" rx=".75" fill="url(#track)"/>
+  <g clip-path="url(#dc)">
+    <rect class="gl" x="0" y="9" width="220" height="2.5" rx="1.25" fill="url(#pulse)"/>
+  </g>
+  <polygon class="gm" points="600,5 605,10 600,15 595,10" fill="#e02424"/>
+</svg>

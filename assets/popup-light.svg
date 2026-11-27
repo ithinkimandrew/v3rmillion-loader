@@ -8,7 +8,16 @@
     @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
     .in{animation:in .5s ease-out both}
     @keyframes ring{from{stroke-dashoffset:213.63}to{stroke-dashoffset:87.59}}
-    .ring{animation:ring 1.4s .6s cubic-bezier(.2,.8,.2,1) both}
+    @keyframes ringBreath{0%,100%{stroke-dashoffset:87.59;opacity:1}50%{stroke-dashoffset:83.2;opacity:.86}}
+    .ring{animation:ring 1.4s .6s cubic-bezier(.2,.8,.2,1) both, ringBreath 4.2s 2.2s ease-in-out infinite}
+    @keyframes ringHalo{0%,100%{opacity:.1}50%{opacity:.28}}
+    .ring-halo{animation:ringHalo 4.2s 2.2s ease-in-out infinite}
+    @keyframes accentBreath{0%,100%{opacity:.78}50%{opacity:1}}
+    .accent-bar{animation:accentBreath 3.2s ease-in-out infinite}
+    @keyframes liveDot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.28;transform:scale(.82)}}
+    .live-dot{transform-box:fill-box;transform-origin:center;animation:liveDot 2.2s ease-in-out infinite}
+    @keyframes reloadTick{0%,82%{transform:rotate(0deg)}96%,100%{transform:rotate(-360deg)}}
+    .reload-ico{transform-box:fill-box;transform-origin:center;animation:reloadTick 7.5s cubic-bezier(.4,0,.2,1) infinite}
   </style>
   <g clip-path="url(#frame)">
     <rect width="360" height="600" fill="#f4f4f6"/>
@@ -21,7 +30,7 @@
     <g transform="translate(-6 0)"><rect x="286" y="18" width="32" height="32" rx="9" fill="#eeeef1" stroke="#000000" stroke-opacity=".09"/>
     <circle cx="302" cy="34" r="3.5" fill="none" stroke="#52525b" stroke-width="1.8"/><path d="M302 26.5v1.8M302 39.7v1.8M294.5 34h1.8M307.7 34h1.8M296.7 28.7l1.3 1.3M306 38l1.3 1.3M296.7 39.3l1.3-1.3M306 30l1.3-1.3" stroke="#52525b" stroke-width="1.8" stroke-linecap="round"/></g>
     <rect x="324" y="18" width="32" height="32" rx="9" fill="#eeeef1" stroke="#000000" stroke-opacity=".09" transform="translate(-4 0)"/>
-    <path d="M342 34a6 6 0 1 1-1.8-4.3M342 27.5v3.5h-3.5" transform="translate(-4 0)" fill="none" stroke="#52525b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(-4 0)"><path class="reload-ico" d="M342 34a6 6 0 1 1-1.8-4.3M342 27.5v3.5h-3.5" fill="none" stroke="#52525b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
 
     <rect x="16" y="64" width="328" height="34" rx="10" fill="#eeeef1"/>
     <rect x="19" y="67" width="161" height="28" rx="8" fill="#ffffff"/>
@@ -30,10 +39,11 @@
 
     <g class="in">
       <rect x="16" y="110" width="328" height="82" rx="14" fill="#ffffff" stroke="#000000" stroke-opacity=".09" />
-      <rect x="16" y="124" width="4" height="54" rx="2" fill="#c21b1b"/>
-      <rect x="32" y="131" width="40" height="40" rx="11" fill="rgba(194,27,27,.1)"/>
+      <rect class="accent-bar" x="16" y="124" width="4" height="54" rx="2" fill="#c21b1b"/>
+      <rect class="accent-bar" x="32" y="131" width="40" height="40" rx="11" fill="rgba(194,27,27,.1)"/>
       <path d="M58 142a5 5 0 0 0-6.6 6.2l-6.4 6.4 2.4 2.4 6.4-6.4a5 5 0 0 0 6.2-6.6l-3 3-2.2-.6-.6-2.2z" fill="none" stroke="#c21b1b" stroke-width="1.7" stroke-linejoin="round"/>
       <text x="86" y="145" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#18181b">Fixes applied</text>
+      <circle class="live-dot" cx="326" cy="140" r="3.5" fill="#16a34a"/>
       <text x="86" y="164" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#52525b">4 loading problems were found</text>
       <text x="86" y="180" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12" fill="#52525b">and repaired on this page.</text>
     </g>
@@ -94,6 +104,7 @@
       <rect x="16" y="462" width="328" height="122" rx="14" fill="#ffffff" stroke="#000000" stroke-opacity=".09" />
       <text x="30" y="486" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="#52525b">LIFETIME</text>
       <circle cx="74" cy="534" r="34" fill="none" stroke="#eeeef1" stroke-width="8"/>
+      <circle class="ring-halo" cx="74" cy="534" r="34" fill="none" stroke="#e02424" stroke-width="11" stroke-linecap="round" stroke-dasharray="213.63" stroke-dashoffset="87.59" transform="rotate(-90 74 534)"/>
       <circle class="ring" cx="74" cy="534" r="34" fill="none" stroke="#c21b1b" stroke-width="8" stroke-linecap="round" stroke-dasharray="213.63" transform="rotate(-90 74 534)"/>
       <text x="74" y="536" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="16" font-weight="800" fill="#18181b">59%</text>
       <text x="74" y="550" text-anchor="middle" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="9.5" fill="#8b8b94">repaired</text>

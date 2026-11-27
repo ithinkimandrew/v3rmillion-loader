@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="210" viewBox="0 0 1200 210" role="img" aria-label="Privacy and host boundary overview: strict v3rmillion.net and v3rm.net allowlist, local chrome.storage vault, zero outbound telemetry, and Cloudflare and ad-blocker non-interference">
+  <defs>
+    <radialGradient id="psGlowL" cx="12%" cy="15%" r="48%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="psGlowR" cx="90%" cy="80%" r="46%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="psBeam" x1="0" x2="1">
+      <stop offset="0" stop-color="#22c55e" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#22c55e" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="psGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".028"/>
+    </pattern>
+    <clipPath id="psFrame"><rect width="1200" height="210" rx="18"/></clipPath>
+  </defs>
+  <style>
+    .t-title{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:15px;font-weight:700;fill:#f2f2f3}
+    .t-sub{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:11.5px;fill:#a1a1aa}
+    .t-mono{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:10.5px;font-weight:600}
+    .t-tag{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:9.5px;font-weight:700;letter-spacing:.7px}
+
+    @keyframes beamMove{0%{transform:translateX(-340px)}100%{transform:translateX(1260px)}}
+    @keyframes dotBreath{0%,100%{opacity:1}50%{opacity:.28}}
+    @keyframes vaultPulse{0%,100%{stroke-opacity:.35}50%{stroke-opacity:.9}}
+    @keyframes zeroPulse{0%,100%{opacity:.65}50%{opacity:1}}
+    .beam{animation:beamMove 6.4s cubic-bezier(.4,0,.2,1) infinite}
+    .dp{animation:dotBreath 2s ease-in-out infinite}
+    .vp{animation:vaultPulse 2.8s ease-in-out infinite}
+    .zp{animation:zeroPulse 2.4s ease-in-out infinite}
+  </style>
+
+  <g clip-path="url(#psFrame)">
+    <rect width="1200" height="210" fill="#0f0f11"/>
+    <rect width="1200" height="210" fill="url(#psGrid)"/>
+    <rect width="1200" height="210" fill="url(#psGlowL)"/>
+    <rect width="1200" height="210" fill="url(#psGlowR)"/>
+    <rect x="0" y="207.5" width="1200" height="2.5" fill="#ffffff" fill-opacity=".05"/>
+    <rect class="beam" x="0" y="207" width="320" height="3" rx="1.5" fill="url(#psBeam)"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="209" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".085"/>
+
+  <!-- ================= PILLAR 1: Strict Host Allowlist ================= -->
+  <g transform="translate(24 22)">
+    <rect width="273" height="164" rx="14" fill="#17171a" stroke="#22c55e" stroke-opacity=".28"/>
+    <rect x="0" y="16" width="3" height="36" rx="1.5" fill="#22c55e"/>
+    <rect x="14" y="14" width="34" height="34" rx="9" fill="#1e1e22" stroke="#22c55e" stroke-opacity=".35"/>
+    <path d="M31 22l8 3v6c0 4.5-3.4 8.3-8 9.4-4.6-1.1-8-4.9-8-9.4v-6z" fill="none" stroke="#22c55e" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M27.5 31l2.5 2.5 5-5" fill="none" stroke="#22c55e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="58" y="29" class="t-title">Strict host allowlist</text>
+    <text x="58" y="45" class="t-sub">Scoped manifest rules</text>
+
+    <rect x="14" y="62" width="245" height="24" rx="6" fill="#121215" stroke="#22c55e" stroke-opacity=".28"/>
+    <circle class="dp" cx="25" cy="74" r="3" fill="#22c55e"/>
+    <text x="36" y="77.5" class="t-mono" fill="#22c55e">ALLOW</text>
+    <text x="249" y="77.5" text-anchor="end" class="t-mono" fill="#f2f2f3">v3rmillion.net</text>
+
+    <rect x="14" y="92" width="245" height="24" rx="6" fill="#121215" stroke="#22c55e" stroke-opacity=".28"/>
+    <circle class="dp" cx="25" cy="104" r="3" fill="#22c55e"/>
+    <text x="36" y="107.5" class="t-mono" fill="#22c55e">ALLOW</text>
+    <text x="249" y="107.5" text-anchor="end" class="t-mono" fill="#f2f2f3">*.v3rm.net</text>
+
+    <rect x="14" y="122" width="245" height="24" rx="6" fill="#121215" stroke="#e02424" stroke-opacity=".24"/>
+    <circle cx="25" cy="134" r="3" fill="#e02424"/>
+    <text x="36" y="137.5" class="t-mono" fill="#e02424">DENY</text>
+    <text x="249" y="137.5" text-anchor="end" class="t-mono" fill="#6b6b74">all other hosts</text>
+  </g>
+
+  <!-- ================= PILLAR 2: Local Chrome Storage Vault ================= -->
+  <g transform="translate(317 22)">
+    <rect width="273" height="164" rx="14" fill="#17171a" stroke="#38bdf8" stroke-opacity=".28"/>
+    <rect x="0" y="16" width="3" height="36" rx="1.5" fill="#38bdf8"/>
+    <rect x="14" y="14" width="34" height="34" rx="9" fill="#1e1e22" stroke="#38bdf8" stroke-opacity=".35"/>
+    <ellipse cx="31" cy="24" rx="8" ry="3.2" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+    <path d="M23 24v12c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2V24" fill="none" stroke="#38bdf8" stroke-width="1.6"/>
+    <path class="vp" d="M23 30c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2" fill="none" stroke="#38bdf8" stroke-width="1.4"/>
+    <text x="58" y="29" class="t-title">Local storage vault</text>
+    <text x="58" y="45" class="t-sub">Stays inside browser</text>
+
+    <rect x="14" y="62" width="245" height="24" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="77.5" class="t-mono" fill="#38bdf8">storage.local</text>
+    <text x="249" y="77.5" text-anchor="end" class="t-mono" fill="#a1a1aa">lifetime stats</text>
+
+    <rect x="14" y="92" width="245" height="24" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="107.5" class="t-mono" fill="#38bdf8">storage.session</text>
+    <text x="249" y="107.5" text-anchor="end" class="t-mono" fill="#a1a1aa">active tab</text>
+
+    <rect x="14" y="122" width="245" height="24" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="137.5" class="t-mono" fill="#38bdf8">storage.sync</text>
+    <text x="249" y="137.5" text-anchor="end" class="t-mono" fill="#a1a1aa">your prefs</text>
+  </g>
+
+  <!-- ================= PILLAR 3: Zero Outbound Telemetry ================= -->
+  <g transform="translate(610 22)">
+    <rect width="273" height="164" rx="14" fill="#17171a" stroke="#22c55e" stroke-opacity=".28"/>
+    <rect x="0" y="16" width="3" height="36" rx="1.5" fill="#22c55e"/>
+    <rect x="14" y="14" width="34" height="34" rx="9" fill="#1e1e22" stroke="#22c55e" stroke-opacity=".35"/>
+    <circle cx="31" cy="31" r="8.5" fill="none" stroke="#22c55e" stroke-width="1.6"/>
+    <line x1="25" y1="25" x2="37" y2="37" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="58" y="29" class="t-title">Zero telemetry</text>
+    <text x="58" y="45" class="t-sub">No external endpoints</text>
+
+    <rect x="14" y="62" width="245" height="40" rx="8" fill="#121215" stroke="#22c55e" stroke-opacity=".26"/>
+    <text x="24" y="80" class="t-tag" fill="#a1a1aa">OUTBOUND TRACKING</text>
+    <text x="24" y="95" class="t-mono" fill="#6b6b74">analytics / beacons</text>
+    <text x="248" y="88" text-anchor="end" class="t-title zp" fill="#22c55e">0 B</text>
+
+    <text x="16" y="124" class="t-sub">Re-requests only V3rmillion's</text>
+    <text x="16" y="141" class="t-sub">own files from its own servers.</text>
+  </g>
+
+  <!-- ================= PILLAR 4: Non-Interference ================= -->
+  <g transform="translate(903 22)">
+    <rect width="273" height="164" rx="14" fill="#17171a" stroke="#f59e0b" stroke-opacity=".28"/>
+    <rect x="0" y="16" width="3" height="36" rx="1.5" fill="#f59e0b"/>
+    <rect x="14" y="14" width="34" height="34" rx="9" fill="#1e1e22" stroke="#f59e0b" stroke-opacity=".35"/>
+    <path d="M23 31h16M35 26l4 5-4 5" fill="none" stroke="#f59e0b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="dp" cx="25" cy="31" r="2.2" fill="#f59e0b"/>
+    <text x="58" y="29" class="t-title">Non-interference</text>
+    <text x="58" y="45" class="t-sub">Respects CF &amp; blockers</text>
+
+    <rect x="14" y="62" width="245" height="24" rx="6" fill="#121215" stroke="#f59e0b" stroke-opacity=".25"/>
+    <text x="24" y="77.5" class="t-mono" fill="#f59e0b">Cloudflare</text>
+    <text x="249" y="77.5" text-anchor="end" class="t-mono" fill="#a1a1aa">yields cleanly</text>
+
+    <rect x="14" y="92" width="245" height="24" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="107.5" class="t-mono" fill="#a1a1aa">/assets/ad/*</text>
+    <text x="249" y="107.5" text-anchor="end" class="t-mono" fill="#22c55e">never retried</text>
+
+    <rect x="14" y="122" width="245" height="24" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="137.5" class="t-mono" fill="#a1a1aa">Brave / uBlock</text>
+    <text x="249" y="137.5" text-anchor="end" class="t-mono" fill="#22c55e">100% compatible</text>
+  </g>
+</svg>

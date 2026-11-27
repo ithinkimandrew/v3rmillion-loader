@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="185" viewBox="0 0 1200 185" role="img" aria-label="Five-stage installation pipeline: 01 Download, 02 Open extensions, 03 Developer mode, 04 Load unpacked, 05 Pin and browse">
+  <defs>
+    <radialGradient id="isGlow" cx="50%" cy="0%" r="72%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="railGrad" x1="0" x2="1">
+      <stop offset="0" stop-color="#8f1010"/>
+      <stop offset=".75" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <pattern id="isGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".03"/>
+    </pattern>
+    <clipPath id="isFrame"><rect width="1200" height="185" rx="18"/></clipPath>
+  </defs>
+  <style>
+    .s-num{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:11px;font-weight:700;letter-spacing:.8px}
+    .s-title{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:15px;font-weight:700;fill:#f2f2f3}
+    .s-sub{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:11.5px;fill:#a1a1aa}
+    .s-code{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:10.5px;fill:#a1a1aa}
+
+    /* Sequential step highlights across 7.5s cycle */
+    @keyframes hi1{0%,18%{stroke-opacity:.85}24%,100%{stroke-opacity:.09}}
+    @keyframes hi2{0%,18%{stroke-opacity:.09}20%,38%{stroke-opacity:.85}44%,100%{stroke-opacity:.09}}
+    @keyframes hi3{0%,38%{stroke-opacity:.09}40%,58%{stroke-opacity:.85}64%,100%{stroke-opacity:.09}}
+    @keyframes hi4{0%,58%{stroke-opacity:.09}60%,78%{stroke-opacity:.85}84%,100%{stroke-opacity:.09}}
+    @keyframes hi5{0%,78%{stroke-opacity:.09}80%,97%{stroke-opacity:.9}100%{stroke-opacity:.09}}
+
+    .c1{animation:hi1 7.5s ease-in-out infinite}
+    .c2{animation:hi2 7.5s ease-in-out infinite}
+    .c3{animation:hi3 7.5s ease-in-out infinite}
+    .c4{animation:hi4 7.5s ease-in-out infinite}
+    .c5{animation:hi5 7.5s ease-in-out infinite}
+
+    /* Flowing luminous crimson signal packets along connectors */
+    @keyframes flowDash{from{stroke-dashoffset:48}to{stroke-dashoffset:0}}
+    .flow{stroke-dasharray:10 14;animation:flowDash 1.3s linear infinite}
+
+    /* Micro icon animations */
+    @keyframes dlBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+    @keyframes togKnob{0%,38%{transform:translateX(0)}45%,90%{transform:translateX(12px)}96%,100%{transform:translateX(0)}}
+    @keyframes togBg{0%,38%{fill:#2a2a30}45%,90%{fill:#c21b1b}96%,100%{fill:#2a2a30}}
+    @keyframes pinPulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .dl-arr{animation:dlBounce 1.8s ease-in-out infinite}
+    .tog-k{animation:togKnob 7.5s cubic-bezier(.4,0,.2,1) infinite}
+    .tog-b{animation:togBg 7.5s ease-in-out infinite}
+    .pin-dot{animation:pinPulse 1.6s ease-in-out infinite}
+  </style>
+
+  <g clip-path="url(#isFrame)">
+    <rect width="1200" height="185" fill="#0f0f11"/>
+    <rect width="1200" height="185" fill="url(#isGrid)"/>
+    <rect width="1200" height="185" fill="url(#isGlow)"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="184" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".085"/>
+
+  <!-- Background continuous rail behind connectors -->
+  <line x1="228" y1="92" x2="261" y2="92" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <line x1="228" y1="92" x2="261" y2="92" stroke="#e02424" stroke-width="2.4" stroke-linecap="round" class="flow"/>
+  <path d="M254 87l5 5-5 5" fill="none" stroke="#e02424" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <line x1="465" y1="92" x2="498" y2="92" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <line x1="465" y1="92" x2="498" y2="92" stroke="#e02424" stroke-width="2.4" stroke-linecap="round" class="flow"/>
+  <path d="M491 87l5 5-5 5" fill="none" stroke="#e02424" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <line x1="702" y1="92" x2="735" y2="92" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <line x1="702" y1="92" x2="735" y2="92" stroke="#e02424" stroke-width="2.4" stroke-linecap="round" class="flow"/>
+  <path d="M728 87l5 5-5 5" fill="none" stroke="#e02424" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <line x1="939" y1="92" x2="972" y2="92" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <line x1="939" y1="92" x2="972" y2="92" stroke="#22c55e" stroke-width="2.4" stroke-linecap="round" class="flow"/>
+  <path d="M965 87l5 5-5 5" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ================= STEP 01: Download ================= -->
+  <g transform="translate(24 22)">
+    <rect width="204" height="141" rx="14" fill="#17171a" stroke="#e02424" stroke-width="1.4" class="c1"/>
+    <rect x="14" y="14" width="34" height="22" rx="7" fill="#e02424" fill-opacity=".16"/>
+    <text x="31" y="29" text-anchor="middle" class="s-num" fill="#e02424">01</text>
+    <!-- Download icon -->
+    <g transform="translate(154 14)">
+      <rect width="36" height="36" rx="10" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".07"/>
+      <path class="dl-arr" d="M18 10v11M13.5 17.5L18 22l4.5-4.5" fill="none" stroke="#e02424" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11 25h14" stroke="#a1a1aa" stroke-width="1.8" stroke-linecap="round"/>
+    </g>
+    <text x="14" y="76" class="s-title">Download</text>
+    <text x="14" y="96" class="s-sub">Grab ZIP or clone repo</text>
+    <rect x="14" y="108" width="176" height="22" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="122.5" class="s-code">ZIP / git clone</text>
+  </g>
+
+  <!-- ================= STEP 02: Open extensions ================= -->
+  <g transform="translate(261 22)">
+    <rect width="204" height="141" rx="14" fill="#17171a" stroke="#e02424" stroke-width="1.4" class="c2"/>
+    <rect x="14" y="14" width="34" height="22" rx="7" fill="#e02424" fill-opacity=".16"/>
+    <text x="31" y="29" text-anchor="middle" class="s-num" fill="#e02424">02</text>
+    <!-- Browser extensions icon -->
+    <g transform="translate(154 14)">
+      <rect width="36" height="36" rx="10" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".07"/>
+      <rect x="8" y="10" width="20" height="16" rx="3" fill="none" stroke="#f2f2f3" stroke-width="1.6"/>
+      <line x1="8" y1="15" x2="28" y2="15" stroke="#ffffff" stroke-opacity=".2"/>
+      <circle cx="11.5" cy="12.5" r="1" fill="#e02424"/>
+      <circle cx="14.5" cy="12.5" r="1" fill="#f59e0b"/>
+      <circle cx="17.5" cy="12.5" r="1" fill="#22c55e"/>
+    </g>
+    <text x="14" y="76" class="s-title">Open extensions</text>
+    <text x="14" y="96" class="s-sub">Paste in address bar</text>
+    <rect x="14" y="108" width="176" height="22" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="122.5" class="s-code">chrome://extensions</text>
+  </g>
+
+  <!-- ================= STEP 03: Developer mode ================= -->
+  <g transform="translate(498 22)">
+    <rect width="204" height="141" rx="14" fill="#17171a" stroke="#e02424" stroke-width="1.4" class="c3"/>
+    <rect x="14" y="14" width="34" height="22" rx="7" fill="#e02424" fill-opacity=".16"/>
+    <text x="31" y="29" text-anchor="middle" class="s-num" fill="#e02424">03</text>
+    <!-- Animated toggle icon -->
+    <g transform="translate(154 14)">
+      <rect width="36" height="36" rx="10" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".07"/>
+      <rect class="tog-b" x="6" y="12" width="24" height="12" rx="6"/>
+      <circle class="tog-k" cx="12" cy="18" r="4.2" fill="#ffffff"/>
+    </g>
+    <text x="14" y="76" class="s-title">Developer mode</text>
+    <text x="14" y="96" class="s-sub">Flip top-right switch on</text>
+    <rect x="14" y="108" width="176" height="22" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="122.5" class="s-code">Developer mode: ON</text>
+  </g>
+
+  <!-- ================= STEP 04: Load unpacked ================= -->
+  <g transform="translate(735 22)">
+    <rect width="204" height="141" rx="14" fill="#17171a" stroke="#e02424" stroke-width="1.4" class="c4"/>
+    <rect x="14" y="14" width="34" height="22" rx="7" fill="#e02424" fill-opacity=".16"/>
+    <text x="31" y="29" text-anchor="middle" class="s-num" fill="#e02424">04</text>
+    <!-- Folder icon -->
+    <g transform="translate(154 14)">
+      <rect width="36" height="36" rx="10" fill="#1e1e22" stroke="#ffffff" stroke-opacity=".07"/>
+      <path d="M9 12.5a2 2 0 0 1 2-2h4.5l2 2.2H25a2 2 0 0 1 2 2V24a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2z" fill="none" stroke="#f59e0b" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M18 17v5M15.5 19.5h5" stroke="#f2f2f3" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+    <text x="14" y="76" class="s-title">Load unpacked</text>
+    <text x="14" y="96" class="s-sub">Select extracted folder</text>
+    <rect x="14" y="108" width="176" height="22" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="122.5" class="s-code">manifest.json</text>
+  </g>
+
+  <!-- ================= STEP 05: Pin & browse ================= -->
+  <g transform="translate(972 22)">
+    <rect width="204" height="141" rx="14" fill="#17171a" stroke="#22c55e" stroke-width="1.4" class="c5"/>
+    <rect x="14" y="14" width="34" height="22" rx="7" fill="#22c55e" fill-opacity=".15"/>
+    <text x="31" y="29" text-anchor="middle" class="s-num" fill="#22c55e">05</text>
+    <!-- Pin + live check icon -->
+    <g transform="translate(154 14)">
+      <rect width="36" height="36" rx="10" fill="#1e1e22" stroke="#22c55e" stroke-opacity=".28"/>
+      <path d="M14 11h8l-1.5 6 3 3H12.5l3-3zM18 20v6" fill="none" stroke="#22c55e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="14" y="76" class="s-title">Pin &amp; browse</text>
+    <text x="14" y="96" class="s-sub">Automatic repairs live</text>
+    <rect x="14" y="108" width="176" height="22" rx="6" fill="#121215" stroke="#22c55e" stroke-opacity=".24"/>
+    <circle class="pin-dot" cx="25" cy="119" r="3.5" fill="#22c55e"/>
+    <text x="36" y="122.5" class="s-code" fill="#22c55e">v3rmillion.net</text>
+  </g>
+</svg>

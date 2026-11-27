@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="104" viewBox="0 0 1200 104" role="img" aria-label="V3rmillion Loader: Built for the V3rmillion community">
+  <defs>
+    <radialGradient id="fg" cx="50%" cy="115%" r="65%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flogo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#8f1010"/>
+    </linearGradient>
+    <pattern id="fgrid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#ffffff" stroke-opacity=".03"/>
+    </pattern>
+    <clipPath id="fc"><rect width="1200" height="104" rx="18"/></clipPath>
+  </defs>
+  <style>
+    @keyframes wave{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-240}}
+    @keyframes led{0%,100%{opacity:1}50%{opacity:.28}}
+    .wv{stroke-dasharray:14 10;animation:wave 9s linear infinite}
+    .led{animation:led 1.8s ease-in-out infinite}
+  </style>
+  <g clip-path="url(#fc)">
+    <rect width="1200" height="104" fill="#0f0f11"/>
+    <rect width="1200" height="104" fill="url(#fgrid)"/>
+    <rect width="1200" height="104" fill="url(#fg)"/>
+    <path class="wv" d="M0 78 Q 150 56, 300 78 T 600 78 T 900 78 T 1200 78" fill="none" stroke="#c21b1b" stroke-opacity=".24" stroke-width="1.5"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="103" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+
+  <rect x="32" y="26" width="52" height="52" rx="14" fill="url(#flogo)"/>
+  <rect x="32" y="26" width="52" height="26" rx="14" fill="#ffffff" fill-opacity=".08"/>
+  <text x="58" y="60" text-anchor="middle" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="23" font-weight="800" fill="#ffffff">V3</text>
+
+  <text x="102" y="48" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="20" font-weight="800" fill="#f2f2f3">V3rmillion Loader</text>
+  <text x="102" y="70" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" fill="#a1a1aa">Built for the V3rmillion community. Open-source Manifest V3 extension.</text>
+
+  <g transform="translate(698 35)">
+    <rect width="124" height="34" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="62" y="21.5" text-anchor="middle" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" font-weight="600" fill="#a1a1aa">MANIFEST V3</text>
+  </g>
+  <g transform="translate(834 35)">
+    <rect width="142" height="34" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="71" y="21.5" text-anchor="middle" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" font-weight="600" fill="#a1a1aa">ZERO TELEMETRY</text>
+  </g>
+  <g transform="translate(988 35)">
+    <rect width="180" height="34" rx="10" fill="#22c55e" fill-opacity=".12" stroke="#22c55e" stroke-opacity=".35"/>
+    <circle class="led" cx="22" cy="17" r="4.5" fill="#22c55e"/>
+    <text x="38" y="21.5" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" font-weight="700" fill="#22c55e">LOCAL-ONLY READY</text>
+  </g>
+</svg>

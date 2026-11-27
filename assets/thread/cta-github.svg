@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="116" viewBox="0 0 960 116" role="img" aria-label="Download v1.4.0 or Inspect Full Source on GitHub - 100% Open Source, Zero Telemetry">
+  <defs>
+    <radialGradient id="ctaGlow" cx="85%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#c21b1b" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#8f1010"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cardSweep" x1="0" x2="1">
+      <stop offset="0" stop-color="#e02424" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e02424" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#e02424" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="ctaGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M22 0H0V22" fill="none" stroke="#ffffff" stroke-opacity=".03"/>
+    </pattern>
+    <clipPath id="ctaClip"><rect width="960" height="116" rx="16"/></clipPath>
+    <clipPath id="btnClip"><rect x="708" y="30" width="224" height="56" rx="12"/></clipPath>
+  </defs>
+  <style>
+    @keyframes btnSheen{0%{transform:translateX(-120px)}35%,100%{transform:translateX(300px)}}
+    @keyframes chev1{0%,100%{opacity:.3}33%{opacity:1}}
+    @keyframes chev2{0%,100%{opacity:.3}55%{opacity:1}}
+    @keyframes chev3{0%,100%{opacity:.3}78%{opacity:1}}
+    @keyframes ledPulse{0%,100%{opacity:1}50%{opacity:.28}}
+    @keyframes edgeRun{0%{transform:translateX(-280px)}100%{transform:translateX(1020px)}}
+    .sh{animation:btnSheen 3.6s ease-in-out infinite}
+    .c1{animation:chev1 1.5s ease-in-out infinite}
+    .c2{animation:chev2 1.5s ease-in-out infinite}
+    .c3{animation:chev3 1.5s ease-in-out infinite}
+    .lp{animation:ledPulse 1.8s ease-in-out infinite}
+    .er{animation:edgeRun 5.2s cubic-bezier(.4,0,.2,1) infinite}
+  </style>
+
+  <g clip-path="url(#ctaClip)">
+    <rect width="960" height="116" fill="#0f0f11"/>
+    <rect width="960" height="116" fill="url(#ctaGrid)"/>
+    <rect width="960" height="116" fill="url(#ctaGlow)"/>
+    <rect class="er" x="0" y="113.5" width="260" height="2.5" rx="1.25" fill="url(#cardSweep)"/>
+  </g>
+  <rect x=".5" y=".5" width="959" height="115" rx="16" fill="none" stroke="#c21b1b" stroke-opacity=".48"/>
+
+  <!-- GitHub Mark Container -->
+  <rect x="26" y="30" width="56" height="56" rx="14" fill="#17171a" stroke="#e02424" stroke-opacity=".42"/>
+  <g transform="translate(38 42) scale(1.33)">
+    <path fill="#f2f2f3" fill-rule="evenodd" d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.36 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.22 10.22 0 0 0 22 12.24C22 6.58 17.52 2 12 2z"/>
+  </g>
+
+  <!-- Text Column -->
+  <circle class="lp" cx="105" cy="31" r="4" fill="#22c55e"/>
+  <text x="116" y="35" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5" font-weight="700" letter-spacing="0.6" fill="#22c55e">100% OPEN SOURCE · ZERO TELEMETRY</text>
+
+  <text x="100" y="64" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21.5" font-weight="800" letter-spacing="-0.3" fill="#f2f2f3">Download v1.4.0 or Inspect Full Source</text>
+  <text x="100" y="89" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="13" font-weight="600" fill="#a1a1aa">github.com/ithinkimandrew/v3rmillion-loader</text>
+
+  <!-- Animated CTA Button -->
+  <rect x="708" y="30" width="224" height="56" rx="12" fill="url(#btnGrad)"/>
+  <rect x="708" y="30" width="224" height="28" rx="12" fill="#ffffff" fill-opacity=".1"/>
+  <g clip-path="url(#btnClip)">
+    <polygon class="sh" points="708,30 754,30 732,86 686,86" fill="url(#sheen)"/>
+  </g>
+  <rect x="708.5" y="30.5" width="223" height="55" rx="11.5" fill="none" stroke="#ffffff" stroke-opacity=".2"/>
+  <text x="730" y="63" font-family="'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14" font-weight="800" letter-spacing="0.6" fill="#ffffff">OPEN ON GITHUB</text>
+
+  <g fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline class="c1" points="884,52 890,58 884,64"/>
+    <polyline class="c2" points="894,52 900,58 894,64"/>
+    <polyline class="c3" points="904,52 910,58 904,64"/>
+  </g>
+</svg>

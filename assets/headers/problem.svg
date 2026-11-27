@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="72" viewBox="0 0 1200 72" role="img" aria-label="The problem">
+  <defs>
+    <radialGradient id="hg" cx="6%" cy="50%" r="36%">
+      <stop offset="0" stop-color="#e02424" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#e02424" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e02424"/>
+      <stop offset="1" stop-color="#8f1010"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" x2="1">
+      <stop offset="0" stop-color="#e02424" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e02424" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#e02424" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="hgrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".028"/>
+    </pattern>
+    <clipPath id="hclip"><rect width="1200" height="72" rx="14"/></clipPath>
+  </defs>
+  <style>
+    @keyframes sweep{0%{transform:translateX(-340px)}100%{transform:translateX(1260px)}}
+    @keyframes dotPulse{0%,100%{opacity:1}50%{opacity:.28}}
+    @keyframes barBreath{0%,100%{opacity:.85}50%{opacity:1}}
+    .beam{animation:sweep 6.2s cubic-bezier(.4,0,.2,1) infinite}
+    .dp{animation:dotPulse 2s ease-in-out infinite}
+    .ab{animation:barBreath 3s ease-in-out infinite}
+    @keyframes blinkWarn{0%,100%{opacity:1}50%{opacity:.25}}
+      @keyframes splitL{0%,100%{transform:translate(0,0)}50%{transform:translate(-1.5px,1px)}}
+      @keyframes splitR{0%,100%{transform:translate(0,0)}50%{transform:translate(1.5px,-1px)}}
+      .warn{animation:blinkWarn 1.8s ease-in-out infinite}
+      .sl{animation:splitL 2.8s ease-in-out infinite}
+      .sr{animation:splitR 2.8s ease-in-out infinite}
+  </style>
+  <g clip-path="url(#hclip)">
+    <rect width="1200" height="72" fill="#0f0f11"/>
+    <rect width="1200" height="72" fill="url(#hgrid)"/>
+    <rect width="1200" height="72" fill="url(#hg)"/>
+    <rect x="0" y="70" width="1200" height="2" fill="#ffffff" fill-opacity=".05"/>
+    <rect class="beam" x="0" y="69.5" width="320" height="2.5" rx="1.25" fill="url(#beam)"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="71" rx="14" fill="none" stroke="#ffffff" stroke-opacity=".09"/>
+
+  <rect class="ab" x="14" y="16" width="4" height="40" rx="2" fill="url(#accentBar)"/>
+
+  <rect x="30" y="14" width="44" height="44" rx="11" fill="#17171a" stroke="#e02424" stroke-opacity=".35"/>
+  <g transform="translate(52 36)">
+    <g class="sl" fill="none" stroke="#f2f2f3" stroke-width="1.9" stroke-linecap="round">
+        <path d="M-4 4l-4 4a3.8 3.8 0 0 1-5.4-5.4l3-3"/>
+      </g>
+      <g class="sr" fill="none" stroke="#f2f2f3" stroke-width="1.9" stroke-linecap="round">
+        <path d="M4 -4l4-4a3.8 3.8 0 0 1 5.4 5.4l-3 3"/>
+      </g>
+      <path class="warn" d="M-3 -7l2 3M7 -3l-3 2M-7 3l3-2M3 7l-2-3" stroke="#e02424" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <text x="90" y="45" font-family="'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-0.4" fill="#f2f2f3">The problem</text>
+
+  <g transform="translate(956 20)">
+    <rect width="224" height="32" rx="16" fill="#17171a" stroke="#ffffff" stroke-opacity=".08"/>
+    <circle class="dp" cx="20" cy="16" r="4" fill="#e02424"/>
+    <text x="34" y="20.5" font-family="'Cascadia Code', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="600" letter-spacing="1.1" fill="#a1a1aa">01 // DIAGNOSIS</text>
+  </g>
+</svg>

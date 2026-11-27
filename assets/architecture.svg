@@ -1,0 +1,307 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-label="V3rmillion Loader end-to-end recovery pipeline diagram from page load through Cloudflare gate, parallel CSS, scanner, and JS engines, off-screen image prober with backoff schedule, atomic DOM swap, and popup telemetry">
+  <defs>
+    <radialGradient id="arGlowL" cx="14%" cy="18%" r="48%">
+      <stop offset="0" stop-color="#8f1010" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#8f1010" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="arGlowR" cx="90%" cy="22%" r="42%">
+      <stop offset="0" stop-color="#22c55e" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="arGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".028"/>
+    </pattern>
+    <clipPath id="arFrame"><rect width="1200" height="460" rx="20"/></clipPath>
+  </defs>
+  <style>
+    .t-head{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:11.5px;font-weight:700;letter-spacing:.9px}
+    .t-title{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;fill:#f2f2f3}
+    .t-sub{font-family:'Segoe UI', Inter, Helvetica, Arial, sans-serif;font-size:11.5px;fill:#a1a1aa}
+    .t-mono{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:10px;font-weight:600}
+    .t-tag{font-family:'Cascadia Code', 'JetBrains Mono', ui-monospace, Consolas, monospace;font-size:9.5px;font-weight:700;letter-spacing:.6px}
+
+    /* Animated signal pulses along bus paths */
+    @keyframes sigFwd{from{stroke-dashoffset:48}to{stroke-dashoffset:0}}
+    @keyframes sigRev{from{stroke-dashoffset:0}to{stroke-dashoffset:48}}
+    .sig-red{stroke-dasharray:10 14;animation:sigFwd 1.4s linear infinite}
+    .sig-cyan{stroke-dasharray:9 15;animation:sigFwd 1.3s linear infinite}
+    .sig-green{stroke-dasharray:10 14;animation:sigFwd 1.25s linear infinite}
+    .sig-amber{stroke-dasharray:8 12;animation:sigFwd 1.7s linear infinite}
+    .sig-back{stroke-dasharray:6 10;animation:sigRev 1.6s linear infinite}
+
+    /* Live dots */
+    @keyframes dotP{0%,100%{opacity:1}50%{opacity:.28}}
+    .dp{animation:dotP 1.8s ease-in-out infinite}
+
+    /* Prober candidate rotation (4 items, 4.8s cycle) */
+    @keyframes cA{0%,22%{stroke-opacity:.9;fill-opacity:.22}28%,100%{stroke-opacity:.14;fill-opacity:.05}}
+    @keyframes cB{0%,22%{stroke-opacity:.14;fill-opacity:.05}25%,47%{stroke-opacity:.9;fill-opacity:.22}53%,100%{stroke-opacity:.14;fill-opacity:.05}}
+    @keyframes cC{0%,47%{stroke-opacity:.14;fill-opacity:.05}50%,72%{stroke-opacity:.9;fill-opacity:.22}78%,100%{stroke-opacity:.14;fill-opacity:.05}}
+    @keyframes cD{0%,72%{stroke-opacity:.14;fill-opacity:.05}75%,96%{stroke-opacity:.9;fill-opacity:.22}100%{stroke-opacity:.14;fill-opacity:.05}}
+    .ca{animation:cA 4.8s ease-in-out infinite}
+    .cb{animation:cB 4.8s ease-in-out infinite}
+    .cc{animation:cC 4.8s ease-in-out infinite}
+    .cd{animation:cD 4.8s ease-in-out infinite}
+
+    /* Backoff schedule sequential highlight (6 intervals, 6s cycle) */
+    @keyframes bo1{0%,15%{fill-opacity:.32;stroke-opacity:.9}20%,100%{fill-opacity:.07;stroke-opacity:.16}}
+    @keyframes bo2{0%,15%{fill-opacity:.07;stroke-opacity:.16}17%,32%{fill-opacity:.32;stroke-opacity:.9}37%,100%{fill-opacity:.07;stroke-opacity:.16}}
+    @keyframes bo3{0%,32%{fill-opacity:.07;stroke-opacity:.16}34%,49%{fill-opacity:.32;stroke-opacity:.9}54%,100%{fill-opacity:.07;stroke-opacity:.16}}
+    @keyframes bo4{0%,49%{fill-opacity:.07;stroke-opacity:.16}51%,66%{fill-opacity:.32;stroke-opacity:.9}71%,100%{fill-opacity:.07;stroke-opacity:.16}}
+    @keyframes bo5{0%,66%{fill-opacity:.07;stroke-opacity:.16}68%,83%{fill-opacity:.32;stroke-opacity:.9}88%,100%{fill-opacity:.07;stroke-opacity:.16}}
+    @keyframes bo6{0%,83%{fill-opacity:.07;stroke-opacity:.16}85%,98%{fill-opacity:.32;stroke-opacity:.9}100%{fill-opacity:.07;stroke-opacity:.16}}
+    .bo1{animation:bo1 6s ease-in-out infinite}
+    .bo2{animation:bo2 6s ease-in-out infinite}
+    .bo3{animation:bo3 6s ease-in-out infinite}
+    .bo4{animation:bo4 6s ease-in-out infinite}
+    .bo5{animation:bo5 6s ease-in-out infinite}
+    .bo6{animation:bo6 6s ease-in-out infinite}
+
+    /* Atomic swap pulse */
+    @keyframes swapPulse{0%,100%{stroke-opacity:.35}50%{stroke-opacity:.9}}
+    .swap-card{animation:swapPulse 2.8s ease-in-out infinite}
+  </style>
+
+  <g clip-path="url(#arFrame)">
+    <rect width="1200" height="460" fill="#0f0f11"/>
+    <rect width="1200" height="460" fill="url(#arGrid)"/>
+    <rect width="1200" height="460" fill="url(#arGlowL)"/>
+    <rect width="1200" height="460" fill="url(#arGlowR)"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="459" rx="20" fill="none" stroke="#ffffff" stroke-opacity=".085"/>
+
+  <!-- ================= TOP STATUS BAR ================= -->
+  <circle class="dp" cx="38" cy="34" r="4.5" fill="#e02424"/>
+  <text x="52" y="38" class="t-head" fill="#f2f2f3">RECOVERY PIPELINE</text>
+  <text x="200" y="38" class="t-head" fill="#6b6b74">// CONTENT.JS -&gt; OFF-SCREEN PROBER -&gt; ATOMIC SWAP -&gt; TELEMETRY</text>
+  <g transform="translate(1030 20)">
+    <rect width="142" height="28" rx="14" fill="#22c55e" fill-opacity=".12" stroke="#22c55e" stroke-opacity=".35"/>
+    <circle class="dp" cx="18" cy="14" r="4" fill="#22c55e"/>
+    <text x="31" y="18" class="t-tag" fill="#22c55e">ACTIVE WATCH</text>
+  </g>
+
+  <!-- ================= CONNECTORS (drawn cleanly behind cards) ================= -->
+  <!-- Page load -> Cloudflare gate -->
+  <line x1="150" y1="225" x2="180" y2="225" stroke="#ffffff" stroke-opacity=".12" stroke-width="2"/>
+  <line x1="150" y1="225" x2="180" y2="225" stroke="#e02424" stroke-width="2.2" stroke-linecap="round" class="sig-red"/>
+  <path d="M174 220l5 5-5 5" fill="none" stroke="#e02424" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Cloudflare gate -> YES (Yield to user above) -->
+  <line x1="253" y1="164" x2="253" y2="132" stroke="#f59e0b" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="253" y1="164" x2="253" y2="132" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" class="sig-amber"/>
+  <path d="M248 138l5-5 5 5" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="261" y="139" width="28" height="16" rx="4" fill="#17171a" stroke="#f59e0b" stroke-opacity=".35"/>
+  <text x="275" y="150" text-anchor="middle" class="t-tag" fill="#f59e0b">YES</text>
+
+  <!-- Cloudflare gate -> NO -> 3 Parallel Engines trunk -->
+  <path d="M326 225H348 M348 108V300 M348 108H372 M348 204H372 M348 300H372" fill="none" stroke="#ffffff" stroke-opacity=".1" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M326 225H348V108H372" fill="none" stroke="#e02424" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="sig-red"/>
+  <path d="M326 225H348V204H372" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="sig-cyan"/>
+  <path d="M326 225H348V300H372" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="sig-amber"/>
+  <path d="M366 103l5 5-5 5 M366 199l5 5-5 5 M366 295l5 5-5 5" fill="none" stroke="#f2f2f3" stroke-opacity=".75" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="331" y="232" width="24" height="15" rx="4" fill="#17171a" stroke="#22c55e" stroke-opacity=".4"/>
+  <text x="343" y="242.5" text-anchor="middle" class="t-tag" fill="#22c55e">NO</text>
+
+  <!-- CSS Repair -> Atomic DOM Swap (clean upper lane y=92, strictly above Prober y=118) -->
+  <line x1="578" y1="92" x2="918" y2="92" stroke="#ffffff" stroke-opacity=".1" stroke-width="2"/>
+  <line x1="578" y1="92" x2="918" y2="92" stroke="#e02424" stroke-width="2.2" stroke-linecap="round" class="sig-red"/>
+  <path d="M912 87l5 5-5 5" fill="none" stroke="#e02424" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="692" y="81" width="112" height="20" rx="10" fill="#17171a" stroke="#e02424" stroke-opacity=".35"/>
+  <text x="748" y="94.5" text-anchor="middle" class="t-tag" fill="#e02424">RE-INJECT CSS</text>
+
+  <!-- Continuous Scanner -> Off-screen Image Prober (y=192 forward, y=224 backoff loop) -->
+  <line x1="578" y1="192" x2="614" y2="192" stroke="#38bdf8" stroke-opacity=".2" stroke-width="2"/>
+  <line x1="578" y1="192" x2="614" y2="192" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" class="sig-cyan"/>
+  <path d="M608 187l5 5-5 5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <line x1="614" y1="224" x2="578" y2="224" stroke="#f59e0b" stroke-opacity=".22" stroke-width="2"/>
+  <line x1="614" y1="224" x2="578" y2="224" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" class="sig-back"/>
+  <path d="M584 219l-5 5 5 5" fill="none" stroke="#f59e0b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Off-screen Image Prober -> Atomic DOM Swap (y=154) -->
+  <line x1="882" y1="154" x2="918" y2="154" stroke="#22c55e" stroke-opacity=".2" stroke-width="2"/>
+  <line x1="882" y1="154" x2="918" y2="154" stroke="#22c55e" stroke-width="2.3" stroke-linecap="round" class="sig-green"/>
+  <path d="M912 149l5 5-5 5" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Atomic DOM Swap -> Popup & badge telemetry (downward x=1045) -->
+  <line x1="1045" y1="194" x2="1045" y2="228" stroke="#22c55e" stroke-opacity=".2" stroke-width="2"/>
+  <line x1="1045" y1="194" x2="1045" y2="228" stroke="#22c55e" stroke-width="2.2" stroke-linecap="round" class="sig-green"/>
+  <path d="M1040 222l5 5 5-5" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1056" y="201" width="96" height="19" rx="9" fill="#17171a" stroke="#22c55e" stroke-opacity=".3"/>
+  <text x="1104" y="213.5" text-anchor="middle" class="t-tag" fill="#22c55e">report(kind)</text>
+
+  <!-- JS Watchdog -> Popup & badge telemetry (clean lower lane y=358, strictly below Prober y=332) -->
+  <path d="M475 340V358H918" fill="none" stroke="#ffffff" stroke-opacity=".1" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M475 340V358H918" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sig-amber"/>
+  <path d="M912 353l5 5-5 5" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="656" y="347" width="184" height="20" rx="10" fill="#17171a" stroke="#f59e0b" stroke-opacity=".35"/>
+  <text x="748" y="360.5" text-anchor="middle" class="t-tag" fill="#f59e0b">RELOAD GUARD -&gt; TELEMETRY</text>
+
+  <!-- ================= STAGE 1: Page load ================= -->
+  <g transform="translate(28 170)">
+    <rect width="122" height="110" rx="13" fill="#17171a" stroke="#ffffff" stroke-opacity=".1"/>
+    <rect x="0" y="16" width="3" height="32" rx="1.5" fill="#e02424"/>
+    <rect x="14" y="14" width="32" height="32" rx="9" fill="#1e1e22" stroke="#e02424" stroke-opacity=".32"/>
+    <path d="M24 23h12l4 4v11H24z" fill="none" stroke="#e02424" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M35 23v4h4" fill="none" stroke="#e02424" stroke-width="1.5"/>
+    <text x="14" y="67" class="t-title">Page load</text>
+    <text x="14" y="84" class="t-mono" fill="#a1a1aa">document_start</text>
+    <text x="14" y="99" class="t-mono" fill="#6b6b74">v3rmillion.net</text>
+  </g>
+
+  <!-- ================= STAGE 2A: Yield to user (CF bypass) ================= -->
+  <g transform="translate(180 68)">
+    <rect width="146" height="62" rx="12" fill="#17171a" stroke="#f59e0b" stroke-opacity=".42"/>
+    <rect x="10" y="10" width="44" height="17" rx="8.5" fill="#f59e0b" fill-opacity=".16"/>
+    <text x="32" y="21.5" text-anchor="middle" class="t-tag" fill="#f59e0b">YIELD</text>
+    <text x="61" y="22.5" class="t-title" font-size="12">Skip check</text>
+    <text x="10" y="42" class="t-sub" font-size="11">Do nothing, badge "!"</text>
+    <text x="10" y="55" class="t-mono" fill="#6b6b74">never solves CF</text>
+  </g>
+
+  <!-- ================= STAGE 2B: Cloudflare challenge gate ================= -->
+  <g transform="translate(180 164)">
+    <rect width="146" height="122" rx="13" fill="#17171a" stroke="#f59e0b" stroke-opacity=".34"/>
+    <rect x="12" y="12" width="54" height="18" rx="9" fill="#f59e0b" fill-opacity=".15"/>
+    <text x="39" y="24" text-anchor="middle" class="t-tag" fill="#f59e0b">CF GATE</text>
+    <!-- Shield icon -->
+    <g transform="translate(104 12)">
+      <rect width="28" height="28" rx="8" fill="#1e1e22"/>
+      <path d="M14 6l7 2.8v5.2c0 4.2-3 7.6-7 8.6-4-1-7-4.4-7-8.6V8.8z" fill="none" stroke="#f59e0b" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+    <text x="12" y="57" class="t-title">Challenge gate</text>
+    <text x="12" y="75" class="t-sub">Detects "Just a</text>
+    <text x="12" y="90" class="t-sub">moment..." or</text>
+    <text x="12" y="108" class="t-mono" fill="#f59e0b">#cf-challenge</text>
+  </g>
+
+  <!-- ================= STAGE 3: 3 Parallel Engines ================= -->
+  <!-- 3.1 CSS Repair -->
+  <g transform="translate(372 68)">
+    <rect width="206" height="80" rx="12" fill="#17171a" stroke="#e02424" stroke-opacity=".32"/>
+    <rect x="0" y="14" width="3" height="52" rx="1.5" fill="#e02424"/>
+    <rect x="148" y="10" width="46" height="18" rx="9" fill="#e02424" fill-opacity=".15"/>
+    <text x="171" y="22" text-anchor="middle" class="t-tag" fill="#e02424">CSS</text>
+    <text x="14" y="26" class="t-title">CSS repair</text>
+    <text x="14" y="45" class="t-sub">Detects empty/failed css.php</text>
+    <text x="14" y="64" class="t-mono" fill="#a1a1aa">retry: 0s / 1.5s / 4s</text>
+  </g>
+
+  <!-- 3.2 Continuous Scanner -->
+  <g transform="translate(372 164)">
+    <rect width="206" height="80" rx="12" fill="#17171a" stroke="#38bdf8" stroke-opacity=".35"/>
+    <rect x="0" y="14" width="3" height="52" rx="1.5" fill="#38bdf8"/>
+    <rect x="154" y="10" width="40" height="18" rx="9" fill="#38bdf8" fill-opacity=".14"/>
+    <text x="174" y="22" text-anchor="middle" class="t-tag" fill="#38bdf8">SCAN</text>
+    <text x="14" y="26" class="t-title" font-size="13">Continuous scanner</text>
+    <text x="14" y="45" class="t-sub">2.5s / scroll / focus / online</text>
+    <text x="14" y="64" class="t-mono" fill="#38bdf8">DOM observer + eager lazy</text>
+  </g>
+
+  <!-- 3.3 JS Watchdog -->
+  <g transform="translate(372 260)">
+    <rect width="206" height="80" rx="12" fill="#17171a" stroke="#f59e0b" stroke-opacity=".32"/>
+    <rect x="0" y="14" width="3" height="52" rx="1.5" fill="#f59e0b"/>
+    <rect x="154" y="10" width="40" height="18" rx="9" fill="#f59e0b" fill-opacity=".15"/>
+    <text x="174" y="22" text-anchor="middle" class="t-tag" fill="#f59e0b">JS</text>
+    <text x="14" y="26" class="t-title">JS watchdog</text>
+    <text x="14" y="45" class="t-sub">Checks XenForo runtime</text>
+    <text x="14" y="64" class="t-mono" fill="#a1a1aa">1x guarded reload</text>
+  </g>
+
+  <!-- ================= STAGE 4: Off-screen Image Prober ================= -->
+  <g transform="translate(614 118)">
+    <rect width="268" height="214" rx="14" fill="#17171a" stroke="#e02424" stroke-opacity=".36"/>
+    <rect x="0" y="18" width="3.5" height="44" rx="1.75" fill="#e02424"/>
+    <text x="16" y="28" class="t-title">Off-screen image prober</text>
+    <text x="16" y="45" class="t-sub">Rotates URL candidates off-DOM</text>
+
+    <!-- 2x2 Candidate Chips (cycling highlight) -->
+    <rect class="ca" x="14" y="58" width="116" height="30" rx="7" fill="#e02424" stroke="#e02424" stroke-width="1.2"/>
+    <text x="72" y="76.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">1. original URL</text>
+
+    <rect class="cb" x="138" y="58" width="116" height="30" rx="7" fill="#38bdf8" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="196" y="76.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">2. srcset entry</text>
+
+    <rect class="cc" x="14" y="96" width="116" height="30" rx="7" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.2"/>
+    <text x="72" y="114.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">3. avatar s/m/l</text>
+
+    <rect class="cd" x="138" y="96" width="116" height="30" rx="7" fill="#22c55e" stroke="#22c55e" stroke-width="1.2"/>
+    <text x="196" y="114.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">4. cache-bust</text>
+
+    <!-- Backoff Schedule Section -->
+    <rect x="14" y="138" width="240" height="62" rx="9" fill="#121215" stroke="#ffffff" stroke-opacity=".07"/>
+    <text x="24" y="155" class="t-tag" fill="#a1a1aa">BACKOFF SCHEDULE</text>
+    <text x="244" y="155" text-anchor="end" class="t-tag" fill="#6b6b74">MAX 20 TRIES</text>
+
+    <!-- 6 Timing Pills: 1.5s, 4s, 9s, 15s, 25s, 30s -->
+    <rect class="bo1" x="22" y="164" width="35" height="24" rx="6" fill="#e02424" stroke="#e02424" stroke-width="1.1"/>
+    <text x="39.5" y="179.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">1.5s</text>
+
+    <rect class="bo2" x="61" y="164" width="31" height="24" rx="6" fill="#e02424" stroke="#e02424" stroke-width="1.1"/>
+    <text x="76.5" y="179.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">4s</text>
+
+    <rect class="bo3" x="96" y="164" width="31" height="24" rx="6" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.1"/>
+    <text x="111.5" y="179.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">9s</text>
+
+    <rect class="bo4" x="131" y="164" width="34" height="24" rx="6" fill="#f59e0b" stroke="#f59e0b" stroke-width="1.1"/>
+    <text x="148" y="179.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">15s</text>
+
+    <rect class="bo5" x="169" y="164" width="34" height="24" rx="6" fill="#38bdf8" stroke="#38bdf8" stroke-width="1.1"/>
+    <text x="186" y="179.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">25s</text>
+
+    <rect class="bo6" x="207" y="164" width="38" height="24" rx="6" fill="#22c55e" stroke="#22c55e" stroke-width="1.1"/>
+    <text x="226" y="179.5" text-anchor="middle" class="t-mono" fill="#f2f2f3">30s</text>
+  </g>
+
+  <!-- ================= STAGE 5A: Atomic DOM Swap ================= -->
+  <g transform="translate(918 68)">
+    <rect class="swap-card" width="254" height="126" rx="14" fill="#17171a" stroke="#22c55e" stroke-width="1.4"/>
+    <rect x="0" y="16" width="3.5" height="44" rx="1.75" fill="#22c55e"/>
+    <rect x="180" y="12" width="60" height="20" rx="10" fill="#22c55e" fill-opacity=".15"/>
+    <text x="210" y="25" text-anchor="middle" class="t-tag" fill="#22c55e">ATOMIC</text>
+    <text x="16" y="28" class="t-title">Atomic DOM swap</text>
+    <text x="16" y="49" class="t-sub">Swaps img.src or inline</text>
+    <text x="16" y="65" class="t-sub">background-image only after</text>
+    <text x="16" y="81" class="t-sub">onload succeeds off-screen.</text>
+    <rect x="16" y="92" width="222" height="22" rx="6" fill="#121215" stroke="#22c55e" stroke-opacity=".25"/>
+    <circle class="dp" cx="27" cy="103" r="3.5" fill="#22c55e"/>
+    <text x="38" y="106.5" class="t-mono" fill="#22c55e">zero layout jump / flicker</text>
+  </g>
+
+  <!-- ================= STAGE 5B: Popup & Badge Telemetry ================= -->
+  <g transform="translate(918 228)">
+    <rect width="254" height="142" rx="14" fill="#17171a" stroke="#ffffff" stroke-opacity=".12"/>
+    <rect x="0" y="16" width="3.5" height="44" rx="1.75" fill="#c21b1b"/>
+    <rect x="196" y="12" width="46" height="20" rx="10" fill="#c21b1b" fill-opacity=".18"/>
+    <text x="219" y="25" text-anchor="middle" class="t-tag" fill="#e02424">MV3 SW</text>
+    <text x="16" y="28" class="t-title" font-size="13.5">Popup &amp; telemetry</text>
+    <text x="16" y="48" class="t-sub">Serialized queue in background.js</text>
+    <!-- 3 mini telemetry pills -->
+    <rect x="16" y="60" width="222" height="22" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="74.5" class="t-mono" fill="#a1a1aa">storage.session</text>
+    <text x="230" y="74.5" text-anchor="end" class="t-mono" fill="#f2f2f3">per-tab</text>
+
+    <rect x="16" y="86" width="222" height="22" rx="6" fill="#121215" stroke="#ffffff" stroke-opacity=".06"/>
+    <text x="24" y="100.5" class="t-mono" fill="#a1a1aa">storage.local</text>
+    <text x="230" y="100.5" text-anchor="end" class="t-mono" fill="#f2f2f3">lifetime</text>
+
+    <rect x="16" y="112" width="222" height="20" rx="6" fill="#8f1010" fill-opacity=".22" stroke="#e02424" stroke-opacity=".35"/>
+    <text x="24" y="125.5" class="t-mono" fill="#f2f2f3">chrome.action badge</text>
+    <text x="230" y="125.5" text-anchor="end" class="t-mono" fill="#e02424">+N / !</text>
+  </g>
+
+  <!-- ================= BOTTOM LEGEND STRIP ================= -->
+  <g transform="translate(28 398)">
+    <rect width="1144" height="40" rx="10" fill="#17171a" stroke="#ffffff" stroke-opacity=".07"/>
+    <circle cx="22" cy="20" r="4" fill="#e02424"/>
+    <text x="34" y="24" class="t-sub">Repair signal</text>
+    <circle cx="144" cy="20" r="4" fill="#38bdf8"/>
+    <text x="156" y="24" class="t-sub">Scanner trigger</text>
+    <circle cx="282" cy="20" r="4" fill="#22c55e"/>
+    <text x="294" y="24" class="t-sub">Verified swap</text>
+    <circle cx="412" cy="20" r="4" fill="#f59e0b"/>
+    <text x="424" y="24" class="t-sub">CF yield / backoff</text>
+    <text x="1126" y="24" text-anchor="end" class="t-mono" fill="#6b6b74">SAME-ORIGIN RETRIES ONLY // NO EXTERNAL SERVERS</text>
+  </g>
+</svg>
